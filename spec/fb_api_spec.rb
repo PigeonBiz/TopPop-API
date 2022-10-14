@@ -3,7 +3,7 @@
 require 'minitest/autorun'
 require 'minitest/rg'
 require 'yaml'
-require_relative '../lib/facebook_api.rb'
+require_relative '../lib/facebook_api'
 
 PATH = 'me?fields=name%2Cbirthday%2Cemail%2Cfriends'
 CONFIG = YAML.safe_load(File.read('../config/secrets.yml'))
