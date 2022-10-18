@@ -24,6 +24,8 @@ yt_response[project_url] = call_yt_url(project_url)
 project = yt_response[project_url].parse
 
 yt_results['kind'] = project['kind']
+yt_results['etag'] = project['etag']
+yt_results['nextPageToken'] = project['nextPageToken']
 yt_results['regionCode'] = project['regionCode']
 yt_results['items'] = project['items']
 
