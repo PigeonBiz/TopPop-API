@@ -2,11 +2,12 @@
 
 require 'http'
 require_relative 'information'
+require_relative 'video'
 
 module CodePraise
-  # Library for Facebook Web API
-  class FacebookApi
-    API_INFROMATION_ROOT = 'https://graph.facebook.com/v15.0'
+  # Library for Youtube Web API
+  class YoutubeApi
+    API_INFROMATION_ROOT = 'https://www.googleapis.com/youtube/v3'
 
     module Errors
       class BadRequest < StandardError; end
@@ -17,22 +18,26 @@ module CodePraise
     }.freeze
 
     def initialize(token)
-      @fb_token = token
+      @yt_token = token
     end
 
-    def information(path)
-      information_req_url = fb_api_path(path)
-      information_data = call_fb_url(information_req_url).parse
+    def information(search, count)
+      information_req_url = yt_api_path(search, count)
+      information_data = call_yt_url(information_req_url).parse
       Information.new(information_data, self)
+    end
+
+    def videos(videos_data)
+      videos_data.map { |video_data| Video.new(video_data) }
     end
 
     private
 
-    def fb_api_path(path)
-      "#{API_INFROMATION_ROOT}/#{path}&access_token=#{@fb_token}"
+    def yt_api_path(search, count)
+      "#{API_INFROMATION_ROOT}/search?part=snippet&q=#{search}&key=#{@yt_token}&type=video&maxResults=#{count}"
     end
 
-    def call_fb_url(url)
+    def call_yt_url(url)
       result = HTTP.headers('Accept' => 'application/json').get(url)
       successful?(result) ? result : raise(HTTP_ERROR[result.code])
     end
