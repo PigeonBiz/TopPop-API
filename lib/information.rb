@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'video'
+
 module CodePraise
   # Model for Information
   class Information
@@ -8,20 +10,24 @@ module CodePraise
       @data_source = data_source
     end
 
-    def name
-      @information['name']
+    def kind
+      @information['kind']
     end
 
-    def birthday
-      @information['birthday']
+    def etag
+      @information['etag']
     end
 
-    def email
-      @information['email']
+    def next_page_token
+      @information['nextPageToken']
     end
 
-    def friends_total_count
-      @information['friends_total_count']
+    def region_code
+      @information['regionCode']
+    end
+
+    def videos
+      @videos ||= @data_source.videos(@information['items'])
     end
   end
 end
