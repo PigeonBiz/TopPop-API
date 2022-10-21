@@ -1,0 +1,142 @@
+---
+kind: youtube#searchListResponse
+etag: PwtPopdNjpHpMv6C3HFgGU_9bQc
+nextPageToken: CAUQAA
+regionCode: TW
+items:
+- kind: youtube#searchResult
+  etag: j8xjXwrTuPtAqqQ5AsMiDDd7YPs
+  id:
+    kind: youtube#video
+    videoId: RsEZmictANA
+  snippet:
+    publishedAt: '2020-12-11T05:00:10Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - willow (Official Music Video)
+    description: 'Official music video by Taylor Swift performing “willow” – off her
+      evermore album. Listen to the album here: ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/RsEZmictANA/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/RsEZmictANA/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/RsEZmictANA/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2020-12-11T05:00:10Z'
+- kind: youtube#searchResult
+  etag: SKqLtTtLlhqhtqYHpUYGWiM-X3M
+  id:
+    kind: youtube#video
+    videoId: e-ORhEE9VVg
+  snippet:
+    publishedAt: '2014-11-10T17:05:44Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - Blank Space
+    description: 'Exclusive Merch: https://store.taylorswift.com ▻Follow Taylor Swift
+      Online Instagram: http://www.instagram.com/taylorswift ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/e-ORhEE9VVg/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/e-ORhEE9VVg/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/e-ORhEE9VVg/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2014-11-10T17:05:44Z'
+- kind: youtube#searchResult
+  etag: fk7MM95lKiZk2uxha9MbjOBNc48
+  id:
+    kind: youtube#video
+    videoId: FuXNumBwDOM
+  snippet:
+    publishedAt: '2019-04-26T03:58:13Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - ME! (feat. Brendon Urie of Panic! At The Disco) ft. Brendon
+      Urie
+    description: 'Music video by Taylor Swift performing ME! (feat. Brendon Urie of
+      Panic! At The Disco).Download here: ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/FuXNumBwDOM/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/FuXNumBwDOM/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/FuXNumBwDOM/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2019-04-26T03:58:13Z'
+- kind: youtube#searchResult
+  etag: X67-KuUDzOmvSuqliCs7HVMW8H4
+  id:
+    kind: youtube#video
+    videoId: AqAJLh9wuZ0
+  snippet:
+    publishedAt: '2020-02-27T12:00:11Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - The Man (Official Video)
+    description: 'Official music video by Taylor Swift performing “The Man” – off
+      her album ''Lover.'' Stream/Download the album here: ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/AqAJLh9wuZ0/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/AqAJLh9wuZ0/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/AqAJLh9wuZ0/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2020-02-27T12:00:11Z'
+- kind: youtube#searchResult
+  etag: 6H2LW7xmRiDdrh8F8lI1e8Gc5Wc
+  id:
+    kind: youtube#video
+    videoId: Zlot0i3Zykw
+  snippet:
+    publishedAt: '2013-07-03T20:55:08Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - Red
+    description: 'Exclusive Merch: https://store.taylorswift.com ▻Follow Taylor Swift
+      Online Instagram: http://www.instagram.com/taylorswift ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/Zlot0i3Zykw/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/Zlot0i3Zykw/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/Zlot0i3Zykw/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2013-07-03T20:55:08Z'
