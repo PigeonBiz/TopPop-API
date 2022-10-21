@@ -1,142 +1,141 @@
 ---
 kind: youtube#searchListResponse
-etag: PwtPopdNjpHpMv6C3HFgGU_9bQc
+etag: ZCAB4KHSNHUN8RETiRMKhHbksY0
 nextPageToken: CAUQAA
 regionCode: TW
 items:
 - kind: youtube#searchResult
-  etag: j8xjXwrTuPtAqqQ5AsMiDDd7YPs
+  etag: an16G1yjUXcRLxkMYYhIh5e8RzA
   id:
     kind: youtube#video
-    videoId: RsEZmictANA
+    videoId: b1kbLwvqugk
   snippet:
-    publishedAt: '2020-12-11T05:00:10Z'
+    publishedAt: '2022-10-20T18:06:48Z'
     channelId: UCANLZYMidaCbLQFWXBC95Jg
-    title: Taylor Swift - willow (Official Music Video)
-    description: 'Official music video by Taylor Swift performing “willow” – off her
-      evermore album. Listen to the album here: ...'
+    title: Taylor Swift - Anti-Hero (Official Music Video)
+    description: Tune in for the premiere of the official music video for “Anti-Hero”
+      by Taylor Swift from the new album 'Midnights' at 8AM EST.
     thumbnails:
       default:
-        url: https://i.ytimg.com/vi/RsEZmictANA/default.jpg
+        url: https://i.ytimg.com/vi/b1kbLwvqugk/default_live.jpg
         width: 120
         height: 90
       medium:
-        url: https://i.ytimg.com/vi/RsEZmictANA/mqdefault.jpg
+        url: https://i.ytimg.com/vi/b1kbLwvqugk/mqdefault_live.jpg
         width: 320
         height: 180
       high:
-        url: https://i.ytimg.com/vi/RsEZmictANA/hqdefault.jpg
+        url: https://i.ytimg.com/vi/b1kbLwvqugk/hqdefault_live.jpg
         width: 480
         height: 360
     channelTitle: TaylorSwiftVEVO
-    liveBroadcastContent: none
-    publishTime: '2020-12-11T05:00:10Z'
+    liveBroadcastContent: upcoming
+    publishTime: '2022-10-20T18:06:48Z'
 - kind: youtube#searchResult
-  etag: SKqLtTtLlhqhtqYHpUYGWiM-X3M
+  etag: 7Kw51lkCfYxrWs73ZAeuKMwllNE
   id:
     kind: youtube#video
-    videoId: e-ORhEE9VVg
+    videoId: 88bKJhkcBnY
   snippet:
-    publishedAt: '2014-11-10T17:05:44Z'
-    channelId: UCANLZYMidaCbLQFWXBC95Jg
-    title: Taylor Swift - Blank Space
-    description: 'Exclusive Merch: https://store.taylorswift.com ▻Follow Taylor Swift
-      Online Instagram: http://www.instagram.com/taylorswift ...'
+    publishedAt: '2022-10-21T04:06:19Z'
+    channelId: UCPC0L1d253x-KuMNwa05TpA
+    title: Midnight Rain
+    description: 'Provided to YouTube by Universal Music Group Midnight Rain · Taylor
+      Swift Midnights ℗ 2022 Taylor Swift Released on: ...'
     thumbnails:
       default:
-        url: https://i.ytimg.com/vi/e-ORhEE9VVg/default.jpg
+        url: https://i.ytimg.com/vi/88bKJhkcBnY/default.jpg
         width: 120
         height: 90
       medium:
-        url: https://i.ytimg.com/vi/e-ORhEE9VVg/mqdefault.jpg
+        url: https://i.ytimg.com/vi/88bKJhkcBnY/mqdefault.jpg
         width: 320
         height: 180
       high:
-        url: https://i.ytimg.com/vi/e-ORhEE9VVg/hqdefault.jpg
+        url: https://i.ytimg.com/vi/88bKJhkcBnY/hqdefault.jpg
         width: 480
         height: 360
-    channelTitle: TaylorSwiftVEVO
+    channelTitle: Taylor Swift - Topic
     liveBroadcastContent: none
-    publishTime: '2014-11-10T17:05:44Z'
+    publishTime: '2022-10-21T04:06:19Z'
 - kind: youtube#searchResult
-  etag: fk7MM95lKiZk2uxha9MbjOBNc48
+  etag: r36kTuFyHInqO5aNPWmns9wBtS8
   id:
     kind: youtube#video
-    videoId: FuXNumBwDOM
+    videoId: gCM4FbZ9VaI
   snippet:
-    publishedAt: '2019-04-26T03:58:13Z'
-    channelId: UCANLZYMidaCbLQFWXBC95Jg
-    title: Taylor Swift - ME! (feat. Brendon Urie of Panic! At The Disco) ft. Brendon
-      Urie
-    description: 'Music video by Taylor Swift performing ME! (feat. Brendon Urie of
-      Panic! At The Disco).Download here: ...'
+    publishedAt: '2022-10-21T04:05:50Z'
+    channelId: UCPC0L1d253x-KuMNwa05TpA
+    title: Mastermind
+    description: 'Provided to YouTube by Universal Music Group Mastermind · Taylor
+      Swift Midnights ℗ 2022 Taylor Swift Released on: ...'
     thumbnails:
       default:
-        url: https://i.ytimg.com/vi/FuXNumBwDOM/default.jpg
+        url: https://i.ytimg.com/vi/gCM4FbZ9VaI/default.jpg
         width: 120
         height: 90
       medium:
-        url: https://i.ytimg.com/vi/FuXNumBwDOM/mqdefault.jpg
+        url: https://i.ytimg.com/vi/gCM4FbZ9VaI/mqdefault.jpg
         width: 320
         height: 180
       high:
-        url: https://i.ytimg.com/vi/FuXNumBwDOM/hqdefault.jpg
+        url: https://i.ytimg.com/vi/gCM4FbZ9VaI/hqdefault.jpg
         width: 480
         height: 360
-    channelTitle: TaylorSwiftVEVO
+    channelTitle: Taylor Swift - Topic
     liveBroadcastContent: none
-    publishTime: '2019-04-26T03:58:13Z'
+    publishTime: '2022-10-21T04:05:50Z'
 - kind: youtube#searchResult
-  etag: X67-KuUDzOmvSuqliCs7HVMW8H4
+  etag: lwoVjYRB6vsh6PihlIbTQLRODP8
   id:
     kind: youtube#video
-    videoId: AqAJLh9wuZ0
+    videoId: pzVYSfzNQ5Y
   snippet:
-    publishedAt: '2020-02-27T12:00:11Z'
-    channelId: UCANLZYMidaCbLQFWXBC95Jg
-    title: Taylor Swift - The Man (Official Video)
-    description: 'Official music video by Taylor Swift performing “The Man” – off
-      her album ''Lover.'' Stream/Download the album here: ...'
+    publishedAt: '2022-10-21T04:08:26Z'
+    channelId: UCPC0L1d253x-KuMNwa05TpA
+    title: Karma
+    description: 'Provided to YouTube by Universal Music Group Karma · Taylor Swift
+      Midnights ℗ 2022 Taylor Swift Released on: 2022-10-21 ...'
     thumbnails:
       default:
-        url: https://i.ytimg.com/vi/AqAJLh9wuZ0/default.jpg
+        url: https://i.ytimg.com/vi/pzVYSfzNQ5Y/default.jpg
         width: 120
         height: 90
       medium:
-        url: https://i.ytimg.com/vi/AqAJLh9wuZ0/mqdefault.jpg
+        url: https://i.ytimg.com/vi/pzVYSfzNQ5Y/mqdefault.jpg
         width: 320
         height: 180
       high:
-        url: https://i.ytimg.com/vi/AqAJLh9wuZ0/hqdefault.jpg
+        url: https://i.ytimg.com/vi/pzVYSfzNQ5Y/hqdefault.jpg
         width: 480
         height: 360
-    channelTitle: TaylorSwiftVEVO
+    channelTitle: Taylor Swift - Topic
     liveBroadcastContent: none
-    publishTime: '2020-02-27T12:00:11Z'
+    publishTime: '2022-10-21T04:08:26Z'
 - kind: youtube#searchResult
-  etag: 6H2LW7xmRiDdrh8F8lI1e8Gc5Wc
+  etag: 6if_wSQlcQ3A2veRD_xm4qyqbng
   id:
     kind: youtube#video
-    videoId: Zlot0i3Zykw
+    videoId: xwMygLuUGmM
   snippet:
-    publishedAt: '2013-07-03T20:55:08Z'
-    channelId: UCANLZYMidaCbLQFWXBC95Jg
-    title: Taylor Swift - Red
-    description: 'Exclusive Merch: https://store.taylorswift.com ▻Follow Taylor Swift
-      Online Instagram: http://www.instagram.com/taylorswift ...'
+    publishedAt: '2022-10-21T04:04:18Z'
+    channelId: UCPC0L1d253x-KuMNwa05TpA
+    title: Vigilante Shit
+    description: 'Provided to YouTube by Universal Music Group Vigilante Shit · Taylor
+      Swift Midnights ℗ 2022 Taylor Swift Released on: ...'
     thumbnails:
       default:
-        url: https://i.ytimg.com/vi/Zlot0i3Zykw/default.jpg
+        url: https://i.ytimg.com/vi/xwMygLuUGmM/default.jpg
         width: 120
         height: 90
       medium:
-        url: https://i.ytimg.com/vi/Zlot0i3Zykw/mqdefault.jpg
+        url: https://i.ytimg.com/vi/xwMygLuUGmM/mqdefault.jpg
         width: 320
         height: 180
       high:
-        url: https://i.ytimg.com/vi/Zlot0i3Zykw/hqdefault.jpg
+        url: https://i.ytimg.com/vi/xwMygLuUGmM/hqdefault.jpg
         width: 480
         height: 360
-    channelTitle: TaylorSwiftVEVO
+    channelTitle: Taylor Swift - Topic
     liveBroadcastContent: none
-    publishTime: '2013-07-03T20:55:08Z'
+    publishTime: '2022-10-21T04:04:18Z'

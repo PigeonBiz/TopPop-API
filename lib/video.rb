@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module CodePraise
+module YoutubeInformation
   # Provides access to video data
   class Video
     def initialize(video_data)
@@ -17,6 +17,10 @@ module CodePraise
 
     def publish_date
       @video['snippet']['publishedAt']
+    end
+
+    def channel_title
+      @video['channelTitle']
     end
   end
 end

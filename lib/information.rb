@@ -2,7 +2,7 @@
 
 require_relative 'video'
 
-module CodePraise
+module YoutubeInformation
   # Model for Information
   class Information
     def initialize(information_data, data_source)
