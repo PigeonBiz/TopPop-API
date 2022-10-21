@@ -4,7 +4,7 @@ require 'http'
 require_relative 'information'
 require_relative 'video'
 
-module CodePraise
+module YoutubeInformation
   # Library for Youtube Web API
   class YoutubeApi
     API_INFROMATION_ROOT = 'https://www.googleapis.com/youtube/v3'
