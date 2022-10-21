@@ -1,12 +1,11 @@
 # NTHU_SOA_API_Client
 
-
 ## Overview
 
 A project to explore Facebook Graph API by gathering one's own personal data, created to fulfill the requirements of the course Service Oriented Architecture (SOA), NTHU.
 
 
-## Instruction
+## Instructions
 
 ### 1. Install NTHU_SOA_API_Client
 
@@ -31,7 +30,7 @@ touch fb_results.yml
 ```
 
 
-### 2. Create ACCESS_TOKEN 
+### 2. Create an Access Token
 
 Log in [Facebook](https://www.facebook.com/) OR if you haven't got an account, sign up for one.
 
@@ -59,7 +58,7 @@ Inside `config/secrets.yml`, insert your Access Token in this format:
 Go to `lib/` and run:
 ```bash
 ruby project_info.rb
-``` 
+```
 You should see the result in `spec/fixtures/fb_results.yml` in this format:
 ```yml
 ---
@@ -67,4 +66,13 @@ name: Your_facebook_name
 birthday: 01/01/2001
 email: example@gmail.com
 friends_total_count: 1337
+```
+The `API_library` branch is a library project. The two classes in `facebook_api.rb` and `information.rb` are created from the earlier script `project_info.rb` in the `API_client` branch. These classes shall be used in our future project, but for now, they can only sit here patiently.
+
+
+### 4. Test the result
+
+The test in `spec/fb_api_spec.rb` ensures validity of resources from API. After getting result in  `spec/fixtures/fb_results.yml`, you can go to `spec/` and run the test:
+ ```bash
+ruby fb_api_spec.rb
 ```
