@@ -6,7 +6,7 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     ffi (1.15.5)
-    ffi (1.15.5-x64-mingw-ucrt)
+    ffi (1.15.5-x64-unknown)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
@@ -27,10 +27,11 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
-    unf_ext (0.0.8.2-x64-mingw-ucrt)
+    unf_ext (0.0.8.2-x64-unknown)
 
 PLATFORMS
-  x64-mingw-ucrt
+  universal-darwin-21
+  x64-unknown
   x86_64-linux
 
 DEPENDENCIES
