@@ -6,8 +6,6 @@ TopPop is a music video sorting game. To win this game, the players have to accu
 
 This API client gets a specific *count number* of videos from Youtube API based on specific *search key word*. This action mocks TopPop's real call to Youtube server to query the music video elements of the game.
 
-This `test_vcr` branch adds stubbing web calls (the vcr gem) and automated testing tools to the previous `api_library` branch.
-
 
 ## Instructions
 
@@ -57,3 +55,14 @@ rake quality:rubocop # Run code style linter
 rake quality:reek # Run code smell detector
 rake quality:flog # Run complexiy analysis
 ```
+
+
+## Branches
+
+There are several branches with specific purposes on this repo:
+
+- The `api_explore` branch serves the purpose of exploring Youtube API with a script called `project_info.rb`.
+
+- The `api_library` branch has the `project_info.rb` made into a library.
+
+- The `test_vcr` branch adds stubbing web calls (the vcr gem) and automated testing tools to the `api_library` branch.
