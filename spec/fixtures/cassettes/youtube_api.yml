@@ -1,0 +1,354 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?key=<YOUTUBE_TOKEN>&maxResults=5&part=snippet&q=taylor%20swift%20offical&type=video
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin,Accept-Encoding
+      - Referer
+      - X-Origin
+      Date:
+      - Sun, 23 Oct 2022 02:33:17 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Accept-Ranges:
+      - none
+      Transfer-Encoding:
+      - chunked
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "kind": "youtube#searchListResponse",
+          "etag": "w5nB343-6JLi_PNoDhVzLoQc4VA",
+          "nextPageToken": "CAUQAA",
+          "regionCode": "TW",
+          "pageInfo": {
+            "totalResults": 1000000,
+            "resultsPerPage": 5
+          },
+          "items": [
+            {
+              "kind": "youtube#searchResult",
+              "etag": "S89CL-40dF_XkyTDreR3ckcenc4",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "b1kbLwvqugk"
+              },
+              "snippet": {
+                "publishedAt": "2022-10-21T12:00:06Z",
+                "channelId": "UCANLZYMidaCbLQFWXBC95Jg",
+                "title": "Taylor Swift - Anti-Hero (Official Music Video)",
+                "description": "Official music video for “Anti-Hero” by Taylor Swift from the album 'Midnights'. Buy/Download/Stream 'Midnights': ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/b1kbLwvqugk/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/b1kbLwvqugk/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/b1kbLwvqugk/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "TaylorSwiftVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-10-21T12:00:06Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "dTICJhHk6fmTYeroicAc9epGBdI",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "rg18Kf4en2o"
+              },
+              "snippet": {
+                "publishedAt": "2022-10-22T00:00:29Z",
+                "channelId": "UCANLZYMidaCbLQFWXBC95Jg",
+                "title": "Taylor Swift - Karma (Official Lyric Video)",
+                "description": "Listen to “Karma” by Taylor Swift from the album 'Midnights'. Buy/Download/Stream 'Midnights': ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/rg18Kf4en2o/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/rg18Kf4en2o/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/rg18Kf4en2o/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "TaylorSwiftVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-10-22T00:00:29Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "Uo2eMhuSWRQXvMq4mRfsPLLBQFc",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "ySZGZrcqvr4"
+              },
+              "snippet": {
+                "publishedAt": "2022-10-22T00:00:37Z",
+                "channelId": "UCANLZYMidaCbLQFWXBC95Jg",
+                "title": "Taylor Swift - Paris (Official Lyric Video)",
+                "description": "Listen to \"Paris\" by Taylor Swift from the album 'Midnights (3am Edition)' Buy/Download/Stream 'Midnights (3am Edition)': ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/ySZGZrcqvr4/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/ySZGZrcqvr4/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/ySZGZrcqvr4/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "TaylorSwiftVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-10-22T00:00:37Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "JrxdeROvWgCKKBYchqhLbODnjzE",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "XqN2qFvY64U"
+              },
+              "snippet": {
+                "publishedAt": "2022-10-22T00:00:14Z",
+                "channelId": "UCANLZYMidaCbLQFWXBC95Jg",
+                "title": "Taylor Swift - Anti-Hero (Official Lyric Video)",
+                "description": "Listen to “Anti-Hero” by Taylor Swift from the album 'Midnights'. Buy/Download/Stream 'Midnights': ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/XqN2qFvY64U/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/XqN2qFvY64U/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/XqN2qFvY64U/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "TaylorSwiftVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-10-22T00:00:14Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "uPq338zUWIZJ3Mmwpw7voWzL-NU",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "Odh9ddPUkEY"
+              },
+              "snippet": {
+                "publishedAt": "2022-10-22T00:00:13Z",
+                "channelId": "UCANLZYMidaCbLQFWXBC95Jg",
+                "title": "Taylor Swift - Midnight Rain (Official Lyric Video)",
+                "description": "Listen to “ Midnight Rain e” by Taylor Swift from the album 'Midnights'. Buy/Download/Stream 'Midnights': ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/Odh9ddPUkEY/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/Odh9ddPUkEY/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/Odh9ddPUkEY/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "TaylorSwiftVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-10-22T00:00:13Z"
+              }
+            }
+          ]
+        }
+  recorded_at: Sun, 23 Oct 2022 02:33:17 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?key=<YOUTUBE_TOKEN>&maxResults=5&part=snippet&q=wrong%20path&type=video
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - text/html; charset=UTF-8
+      Referrer-Policy:
+      - no-referrer
+      Content-Length:
+      - '1555'
+      Date:
+      - Sun, 23 Oct 2022 02:33:17 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE html>
+        <html lang=en>
+          <meta charset=utf-8>
+          <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+          <title>Error 400 (Bad Request)!!1</title>
+          <style>
+            *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
+          </style>
+          <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
+          <p><b>400.</b> <ins>That’s an error.</ins>
+          <p>Your client has issued a malformed or illegal request.  <ins>That’s all we know.</ins>
+  recorded_at: Sun, 23 Oct 2022 02:33:17 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?key=BAD_TOKEN&maxResults=5&part=snippet&q=taylor%20swift%20offical&type=video
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Vary:
+      - Origin,Accept-Encoding
+      - Referer
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sun, 23 Oct 2022 02:33:17 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Accept-Ranges:
+      - none
+      Transfer-Encoding:
+      - chunked
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "error": {
+            "code": 400,
+            "message": "API key not valid. Please pass a valid API key.",
+            "errors": [
+              {
+                "message": "API key not valid. Please pass a valid API key.",
+                "domain": "global",
+                "reason": "badRequest"
+              }
+            ],
+            "status": "INVALID_ARGUMENT",
+            "details": [
+              {
+                "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+                "reason": "API_KEY_INVALID",
+                "domain": "googleapis.com",
+                "metadata": {
+                  "service": "youtube.googleapis.com"
+                }
+              }
+            ]
+          }
+        }
+  recorded_at: Sun, 23 Oct 2022 02:33:17 GMT
+recorded_with: VCR 6.1.0
