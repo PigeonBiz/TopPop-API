@@ -2,7 +2,7 @@
 
 require_relative 'spec_helper'
 
-describe 'Tests Youtube API library' do
+describe 'Tests Youtube API library' do # rubocop:disable Metrics/BlockLength
   VCR.configure do |c|
     c.cassette_library_dir = CASSETTES_FOLDER
     c.hook_into :webmock
