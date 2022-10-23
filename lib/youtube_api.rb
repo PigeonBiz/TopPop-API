@@ -8,8 +8,9 @@ module YoutubeInformation
   # Library for Youtube Web API
   class YoutubeApi
     API_INFROMATION_ROOT = 'https://www.googleapis.com/youtube/v3'
-
+   
     module Errors
+      # Generates Error
       class BadRequest < StandardError; end
     end
 

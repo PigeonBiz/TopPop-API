@@ -3,7 +3,7 @@
 require 'http'
 require 'yaml'
 
-config = YAML.safe_load(File.read('../config/secrets.yml'))
+config = YAML.safe_load(File.read('config/secrets.yml'))
 SEARCH_KEY_WORD = 'taylor%20swift%20offical'
 SEARCH_RESULT_NUM = 5
 
@@ -34,4 +34,4 @@ bad_search_url = yt_api_path(SEARCH_KEY_WORD, 'bad_token', SEARCH_RESULT_NUM)
 yt_response[bad_search_url] = call_yt_url(bad_search_url)
 yt_response[bad_search_url].parse
 
-File.write('../spec/fixtures/yt_results.yml', yt_results.to_yaml)
+File.write('spec/fixtures/yt_results.yml', yt_results.to_yaml)

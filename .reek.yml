@@ -1,0 +1,4 @@
+---
+
+exclude_paths:
+  - lib/project_info.rb # this is the shameless green version

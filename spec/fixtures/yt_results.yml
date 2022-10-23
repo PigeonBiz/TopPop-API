@@ -1,0 +1,141 @@
+---
+kind: youtube#searchListResponse
+etag: PxXcTq1e4NubzMAzJ939WCNOwLE
+nextPageToken: CAUQAA
+regionCode: TW
+items:
+- kind: youtube#searchResult
+  etag: b08zeY451g9bqhJ8XjFEfwL0su4
+  id:
+    kind: youtube#video
+    videoId: b1kbLwvqugk
+  snippet:
+    publishedAt: '2022-10-21T12:00:06Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - Anti-Hero (Official Music Video)
+    description: 'Official music video for “Anti-Hero” by Taylor Swift from the album
+      ''Midnights''. Buy/Download/Stream ''Midnights'': ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/b1kbLwvqugk/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/b1kbLwvqugk/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/b1kbLwvqugk/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2022-10-21T12:00:06Z'
+- kind: youtube#searchResult
+  etag: uPq338zUWIZJ3Mmwpw7voWzL-NU
+  id:
+    kind: youtube#video
+    videoId: Odh9ddPUkEY
+  snippet:
+    publishedAt: '2022-10-22T00:00:13Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - Midnight Rain (Official Lyric Video)
+    description: 'Listen to “ Midnight Rain e” by Taylor Swift from the album ''Midnights''.
+      Buy/Download/Stream ''Midnights'': ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/Odh9ddPUkEY/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/Odh9ddPUkEY/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/Odh9ddPUkEY/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2022-10-22T00:00:13Z'
+- kind: youtube#searchResult
+  etag: JrxdeROvWgCKKBYchqhLbODnjzE
+  id:
+    kind: youtube#video
+    videoId: XqN2qFvY64U
+  snippet:
+    publishedAt: '2022-10-22T00:00:14Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - Anti-Hero (Official Lyric Video)
+    description: 'Listen to “Anti-Hero” by Taylor Swift from the album ''Midnights''.
+      Buy/Download/Stream ''Midnights'': ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/XqN2qFvY64U/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/XqN2qFvY64U/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/XqN2qFvY64U/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2022-10-22T00:00:14Z'
+- kind: youtube#searchResult
+  etag: dTICJhHk6fmTYeroicAc9epGBdI
+  id:
+    kind: youtube#video
+    videoId: rg18Kf4en2o
+  snippet:
+    publishedAt: '2022-10-22T00:00:29Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - Karma (Official Lyric Video)
+    description: 'Listen to “Karma” by Taylor Swift from the album ''Midnights''.
+      Buy/Download/Stream ''Midnights'': ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/rg18Kf4en2o/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/rg18Kf4en2o/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/rg18Kf4en2o/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2022-10-22T00:00:29Z'
+- kind: youtube#searchResult
+  etag: Uo2eMhuSWRQXvMq4mRfsPLLBQFc
+  id:
+    kind: youtube#video
+    videoId: ySZGZrcqvr4
+  snippet:
+    publishedAt: '2022-10-22T00:00:37Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - Paris (Official Lyric Video)
+    description: 'Listen to "Paris" by Taylor Swift from the album ''Midnights (3am
+      Edition)'' Buy/Download/Stream ''Midnights (3am Edition)'': ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/ySZGZrcqvr4/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/ySZGZrcqvr4/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/ySZGZrcqvr4/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2022-10-22T00:00:37Z'
