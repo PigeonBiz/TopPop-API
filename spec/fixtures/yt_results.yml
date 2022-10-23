@@ -1,11 +1,11 @@
 ---
 kind: youtube#searchListResponse
-etag: 1_vwvepX7HwMPTnObbftpXKYceo
+etag: PxXcTq1e4NubzMAzJ939WCNOwLE
 nextPageToken: CAUQAA
 regionCode: TW
 items:
 - kind: youtube#searchResult
-  etag: S89CL-40dF_XkyTDreR3ckcenc4
+  etag: b08zeY451g9bqhJ8XjFEfwL0su4
   id:
     kind: youtube#video
     videoId: b1kbLwvqugk
@@ -31,6 +31,60 @@ items:
     channelTitle: TaylorSwiftVEVO
     liveBroadcastContent: none
     publishTime: '2022-10-21T12:00:06Z'
+- kind: youtube#searchResult
+  etag: uPq338zUWIZJ3Mmwpw7voWzL-NU
+  id:
+    kind: youtube#video
+    videoId: Odh9ddPUkEY
+  snippet:
+    publishedAt: '2022-10-22T00:00:13Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - Midnight Rain (Official Lyric Video)
+    description: 'Listen to “ Midnight Rain e” by Taylor Swift from the album ''Midnights''.
+      Buy/Download/Stream ''Midnights'': ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/Odh9ddPUkEY/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/Odh9ddPUkEY/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/Odh9ddPUkEY/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2022-10-22T00:00:13Z'
+- kind: youtube#searchResult
+  etag: JrxdeROvWgCKKBYchqhLbODnjzE
+  id:
+    kind: youtube#video
+    videoId: XqN2qFvY64U
+  snippet:
+    publishedAt: '2022-10-22T00:00:14Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - Anti-Hero (Official Lyric Video)
+    description: 'Listen to “Anti-Hero” by Taylor Swift from the album ''Midnights''.
+      Buy/Download/Stream ''Midnights'': ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/XqN2qFvY64U/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/XqN2qFvY64U/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/XqN2qFvY64U/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2022-10-22T00:00:14Z'
 - kind: youtube#searchResult
   etag: dTICJhHk6fmTYeroicAc9epGBdI
   id:
@@ -85,57 +139,3 @@ items:
     channelTitle: TaylorSwiftVEVO
     liveBroadcastContent: none
     publishTime: '2022-10-22T00:00:37Z'
-- kind: youtube#searchResult
-  etag: JrxdeROvWgCKKBYchqhLbODnjzE
-  id:
-    kind: youtube#video
-    videoId: XqN2qFvY64U
-  snippet:
-    publishedAt: '2022-10-22T00:00:14Z'
-    channelId: UCANLZYMidaCbLQFWXBC95Jg
-    title: Taylor Swift - Anti-Hero (Official Lyric Video)
-    description: 'Listen to “Anti-Hero” by Taylor Swift from the album ''Midnights''.
-      Buy/Download/Stream ''Midnights'': ...'
-    thumbnails:
-      default:
-        url: https://i.ytimg.com/vi/XqN2qFvY64U/default.jpg
-        width: 120
-        height: 90
-      medium:
-        url: https://i.ytimg.com/vi/XqN2qFvY64U/mqdefault.jpg
-        width: 320
-        height: 180
-      high:
-        url: https://i.ytimg.com/vi/XqN2qFvY64U/hqdefault.jpg
-        width: 480
-        height: 360
-    channelTitle: TaylorSwiftVEVO
-    liveBroadcastContent: none
-    publishTime: '2022-10-22T00:00:14Z'
-- kind: youtube#searchResult
-  etag: iklhlmnq8jTVpXN8lAbH10V2pvA
-  id:
-    kind: youtube#video
-    videoId: xxrf_QBD5DE
-  snippet:
-    publishedAt: '2022-10-22T00:00:35Z'
-    channelId: UCANLZYMidaCbLQFWXBC95Jg
-    title: Taylor Swift - Question...? (Official Lyric Video)
-    description: 'Listen to “Question…?” by Taylor Swift from the album ''Midnights''.
-      Buy/Download/Stream ''Midnights'': ...'
-    thumbnails:
-      default:
-        url: https://i.ytimg.com/vi/xxrf_QBD5DE/default.jpg
-        width: 120
-        height: 90
-      medium:
-        url: https://i.ytimg.com/vi/xxrf_QBD5DE/mqdefault.jpg
-        width: 320
-        height: 180
-      high:
-        url: https://i.ytimg.com/vi/xxrf_QBD5DE/hqdefault.jpg
-        width: 480
-        height: 360
-    channelTitle: TaylorSwiftVEVO
-    liveBroadcastContent: none
-    publishTime: '2022-10-22T00:00:35Z'

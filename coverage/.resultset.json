@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/shinstar5/Documents/111-1/SOA/Project/TopPop_API/lib/youtube_api.rb": {
+      "C:/Users/Latitude/Documents/GitHub/TopPop_API/lib/youtube_api.rb": {
         "lines": [
           null,
           null,
@@ -15,6 +15,7 @@
           1,
           null,
           1,
+          null,
           1,
           null,
           null,
@@ -54,7 +55,7 @@
           null
         ]
       },
-      "/Users/shinstar5/Documents/111-1/SOA/Project/TopPop_API/lib/information.rb": {
+      "C:/Users/Latitude/Documents/GitHub/TopPop_API/lib/information.rb": {
         "lines": [
           null,
           null,
@@ -91,7 +92,7 @@
           null
         ]
       },
-      "/Users/shinstar5/Documents/111-1/SOA/Project/TopPop_API/lib/video.rb": {
+      "C:/Users/Latitude/Documents/GitHub/TopPop_API/lib/video.rb": {
         "lines": [
           null,
           null,
@@ -122,6 +123,6 @@
         ]
       }
     },
-    "timestamp": 1666492397
+    "timestamp": 1666530976
   }
 }

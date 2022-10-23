@@ -10,6 +10,7 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     ffi (1.15.5)
+    ffi (1.15.5-x64-mingw-ucrt)
     ffi (1.15.5-x64-unknown)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
@@ -73,6 +74,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
+    unf_ext (0.0.8.2-x64-mingw-ucrt)
     unf_ext (0.0.8.2-x64-unknown)
     unicode-display_width (2.3.0)
     vcr (6.1.0)
@@ -83,6 +85,7 @@ GEM
 
 PLATFORMS
   universal-darwin-21
+  x64-mingw-ucrt
   x64-unknown
   x86_64-linux
 
