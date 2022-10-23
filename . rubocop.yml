@@ -15,4 +15,3 @@ Metrics/BlockLength:
   Enabled: true
   Exclude:
     - 'spec/**/*'
-    - 'spec/yt_api_spec.rb'
