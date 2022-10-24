@@ -1,6 +1,6 @@
 ---
 kind: youtube#searchListResponse
-etag: PxXcTq1e4NubzMAzJ939WCNOwLE
+etag: 1oNm3af5fFjIG2Lzfx1-j2f7-7I
 nextPageToken: CAUQAA
 regionCode: TW
 items:
@@ -59,33 +59,6 @@ items:
     liveBroadcastContent: none
     publishTime: '2022-10-22T00:00:13Z'
 - kind: youtube#searchResult
-  etag: JrxdeROvWgCKKBYchqhLbODnjzE
-  id:
-    kind: youtube#video
-    videoId: XqN2qFvY64U
-  snippet:
-    publishedAt: '2022-10-22T00:00:14Z'
-    channelId: UCANLZYMidaCbLQFWXBC95Jg
-    title: Taylor Swift - Anti-Hero (Official Lyric Video)
-    description: 'Listen to “Anti-Hero” by Taylor Swift from the album ''Midnights''.
-      Buy/Download/Stream ''Midnights'': ...'
-    thumbnails:
-      default:
-        url: https://i.ytimg.com/vi/XqN2qFvY64U/default.jpg
-        width: 120
-        height: 90
-      medium:
-        url: https://i.ytimg.com/vi/XqN2qFvY64U/mqdefault.jpg
-        width: 320
-        height: 180
-      high:
-        url: https://i.ytimg.com/vi/XqN2qFvY64U/hqdefault.jpg
-        width: 480
-        height: 360
-    channelTitle: TaylorSwiftVEVO
-    liveBroadcastContent: none
-    publishTime: '2022-10-22T00:00:14Z'
-- kind: youtube#searchResult
   etag: dTICJhHk6fmTYeroicAc9epGBdI
   id:
     kind: youtube#video
@@ -139,3 +112,30 @@ items:
     channelTitle: TaylorSwiftVEVO
     liveBroadcastContent: none
     publishTime: '2022-10-22T00:00:37Z'
+- kind: youtube#searchResult
+  etag: JrxdeROvWgCKKBYchqhLbODnjzE
+  id:
+    kind: youtube#video
+    videoId: XqN2qFvY64U
+  snippet:
+    publishedAt: '2022-10-22T00:00:14Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - Anti-Hero (Official Lyric Video)
+    description: 'Listen to “Anti-Hero” by Taylor Swift from the album ''Midnights''.
+      Buy/Download/Stream ''Midnights'': ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/XqN2qFvY64U/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/XqN2qFvY64U/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/XqN2qFvY64U/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2022-10-22T00:00:14Z'

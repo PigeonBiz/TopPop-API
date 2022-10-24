@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require 'http'
-require_relative 'information'
-require_relative 'video'
 
 module YoutubeInformation
   # Library for Youtube Web API
@@ -31,8 +29,6 @@ module YoutubeInformation
     def videos(videos_data)
       videos_data.map { |video_data| Video.new(video_data) }
     end
-
-    private
 
     def yt_api_path(search, count)
       "#{API_INFROMATION_ROOT}/search?part=snippet&q=#{search}&key=#{@yt_token}&type=video&maxResults=#{count}"
