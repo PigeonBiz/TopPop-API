@@ -9,7 +9,7 @@ module YoutubeInformation
     class Video < Dry::Struct
       include Dry.Types
 
-      attribute :id,              Strict::String
+      attribute :video_id,        Strict::String
       attribute :title,           Strict::String
       attribute :publish_date,    Strict::String
       attribute :channel_title,   Strict::String

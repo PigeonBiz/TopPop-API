@@ -20,6 +20,7 @@ gem 'webmock', '~> 3'
 # Utility Tools
 gem 'rake'
 
+
 # Code Quality
 gem 'flog'
 gem 'reek'

@@ -5,31 +5,29 @@ module YoutubeInformation
   module Youtube
     # Data Mapper: Youtube search -> Video entity
     class VideoMapper
-      def initialize(yt_token, gateway_class = Youtube::Api)
-        @yt_token = yt_token
-        @gateway_class = gateway_class
-        @gateway = @gateway_class.new(@yt_token)
+      def initialize(videos_data)
+        @videos_data = videos_data
       end
 
-      def load_several(url)
-        @gateway.videos_data(url).map do |data|
-          VideoMapper.build_entity(data)
+      def load_several
+        @videos_data.map do |video_data|
+          VideoMapper.build_entity(video_data)
         end
       end
 
-      def self.build_entity(data)
-        DataMapper.new(data).build_entity
+      def self.build_entity(video_data)
+        DataMapper.new(video_data).build_entity
       end
 
       # Extracts entity specific elements from data structure
       class DataMapper
-        def initialize(data)
-          @data = data
+        def initialize(video_data)
+          @video_data = video_data
         end
 
         def build_entity
-          Entity::Member.new(
-            id:,
+          Entity::Video.new(
+            video_id:,
             title:,
             publish_date:,
             channel_title:
@@ -38,20 +36,20 @@ module YoutubeInformation
 
         private
 
-        def id
-          @data['id']['videoId']
+        def video_id
+          @video_data['id']['videoId']
         end
 
         def title
-          @data['snippet']['title']
+          @video_data['snippet']['title']
         end
 
         def publish_date
-          @data['snippet']['publishedAt']
+          @video_data['snippet']['publishedAt']
         end
 
         def channel_title
-          @data['snippet']['channelTitle']
+          @video_data['snippet']['channelTitle']
         end
       end
     end
