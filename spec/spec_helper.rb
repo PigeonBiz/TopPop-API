@@ -10,7 +10,8 @@ require 'minitest/rg'
 require 'vcr'
 require 'webmock'
 
-require_relative '../lib/youtube_api'
+require_relative '../require_app'
+require_app
 
 SEARCH_KEY_WORD = 'taylor%20swift%20offical'
 COUNT = 5
