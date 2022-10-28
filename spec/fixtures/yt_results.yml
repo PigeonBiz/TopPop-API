@@ -1,6 +1,6 @@
 ---
 kind: youtube#searchListResponse
-etag: SaPCVvIxg_TQCvWozfuTWNrJNb8
+etag: P2YVjkOtAIuOYu0_PV8AefNprbI
 nextPageToken: CAUQAA
 regionCode: TW
 items:
@@ -59,33 +59,6 @@ items:
     liveBroadcastContent: none
     publishTime: '2022-10-25T04:00:09Z'
 - kind: youtube#searchResult
-  etag: k7lshuoyjpQ-fSHO-3UJR5RrDxg
-  id:
-    kind: youtube#video
-    videoId: XqN2qFvY64U
-  snippet:
-    publishedAt: '2022-10-22T00:00:14Z'
-    channelId: UCANLZYMidaCbLQFWXBC95Jg
-    title: Taylor Swift - Anti-Hero (Official Lyric Video)
-    description: 'Listen to “Anti-Hero” by Taylor Swift from the album ''Midnights''.
-      Buy/Download/Stream ''Midnights'': ...'
-    thumbnails:
-      default:
-        url: https://i.ytimg.com/vi/XqN2qFvY64U/default.jpg
-        width: 120
-        height: 90
-      medium:
-        url: https://i.ytimg.com/vi/XqN2qFvY64U/mqdefault.jpg
-        width: 320
-        height: 180
-      high:
-        url: https://i.ytimg.com/vi/XqN2qFvY64U/hqdefault.jpg
-        width: 480
-        height: 360
-    channelTitle: TaylorSwiftVEVO
-    liveBroadcastContent: none
-    publishTime: '2022-10-22T00:00:14Z'
-- kind: youtube#searchResult
   etag: qp0p2m66Z7opplVgZstPOIu_rEA
   id:
     kind: youtube#video
@@ -113,29 +86,56 @@ items:
     liveBroadcastContent: none
     publishTime: '2020-12-11T05:00:10Z'
 - kind: youtube#searchResult
-  etag: CRVW6Aj9f2FMBciR8zAnBJZxHpM
+  etag: ZGRF7trFg-w_zPfp4_yRIVvMFZQ
   id:
     kind: youtube#video
-    videoId: e-ORhEE9VVg
+    videoId: rg18Kf4en2o
   snippet:
-    publishedAt: '2014-11-10T17:05:44Z'
+    publishedAt: '2022-10-22T00:00:29Z'
     channelId: UCANLZYMidaCbLQFWXBC95Jg
-    title: Taylor Swift - Blank Space
-    description: 'Exclusive Merch: https://store.taylorswift.com ▻Follow Taylor Swift
-      Online Instagram: http://www.instagram.com/taylorswift ...'
+    title: Taylor Swift - Karma (Official Lyric Video)
+    description: 'Listen to “Karma” by Taylor Swift from the album ''Midnights''.
+      Buy/Download/Stream ''Midnights'': ...'
     thumbnails:
       default:
-        url: https://i.ytimg.com/vi/e-ORhEE9VVg/default.jpg
+        url: https://i.ytimg.com/vi/rg18Kf4en2o/default.jpg
         width: 120
         height: 90
       medium:
-        url: https://i.ytimg.com/vi/e-ORhEE9VVg/mqdefault.jpg
+        url: https://i.ytimg.com/vi/rg18Kf4en2o/mqdefault.jpg
         width: 320
         height: 180
       high:
-        url: https://i.ytimg.com/vi/e-ORhEE9VVg/hqdefault.jpg
+        url: https://i.ytimg.com/vi/rg18Kf4en2o/hqdefault.jpg
         width: 480
         height: 360
     channelTitle: TaylorSwiftVEVO
     liveBroadcastContent: none
-    publishTime: '2014-11-10T17:05:44Z'
+    publishTime: '2022-10-22T00:00:29Z'
+- kind: youtube#searchResult
+  etag: TSUHp9-DMTkLzaY2vn0JtSuslWg
+  id:
+    kind: youtube#video
+    videoId: Odh9ddPUkEY
+  snippet:
+    publishedAt: '2022-10-22T00:00:13Z'
+    channelId: UCANLZYMidaCbLQFWXBC95Jg
+    title: Taylor Swift - Midnight Rain (Official Lyric Video)
+    description: 'Listen to “ Midnight Rain e” by Taylor Swift from the album ''Midnights''.
+      Buy/Download/Stream ''Midnights'': ...'
+    thumbnails:
+      default:
+        url: https://i.ytimg.com/vi/Odh9ddPUkEY/default.jpg
+        width: 120
+        height: 90
+      medium:
+        url: https://i.ytimg.com/vi/Odh9ddPUkEY/mqdefault.jpg
+        width: 320
+        height: 180
+      high:
+        url: https://i.ytimg.com/vi/Odh9ddPUkEY/hqdefault.jpg
+        width: 480
+        height: 360
+    channelTitle: TaylorSwiftVEVO
+    liveBroadcastContent: none
+    publishTime: '2022-10-22T00:00:13Z'
