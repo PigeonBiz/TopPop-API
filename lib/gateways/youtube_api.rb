@@ -14,10 +14,6 @@ module YoutubeInformation
         Request.new(@yt_token).search_video(search, count).parse
       end
 
-      def videos(videos_data)
-        videos_data.map { |video_data| Video.new(video_data) }
-      end
-
       # Sends out HTTP requests to Youtube
       class Request
         API_SEARCH_ROOT = 'https://www.googleapis.com/youtube/v3'

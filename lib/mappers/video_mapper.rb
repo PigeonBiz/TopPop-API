@@ -9,7 +9,7 @@ module YoutubeInformation
         @videos_data = videos_data
       end
 
-      def load_several
+      def build2vid
         @videos_data.map do |video_data|
           VideoMapper.build_entity(video_data)
         end

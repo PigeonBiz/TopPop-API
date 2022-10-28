@@ -54,7 +54,7 @@ module YoutubeInformation
         end
 
         def videos
-          VideoMapper.new(@data['items']).load_several
+          VideoMapper.new(@data['items']).build2vid
         end
       end
     end
