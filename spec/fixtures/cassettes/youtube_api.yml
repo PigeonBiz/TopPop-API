@@ -2,6 +2,49 @@
 http_interactions:
 - request:
     method: get
+    uri: https://www.googleapis.com/youtube/v3/search?key=<YOUTUBE_TOKEN>&maxResults=5&part=snippet&q=wrong%20path&type=video
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.1.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - text/html; charset=UTF-8
+      Referrer-Policy:
+      - no-referrer
+      Content-Length:
+      - '1555'
+      Date:
+      - Fri, 28 Oct 2022 10:02:46 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE html>
+        <html lang=en>
+          <meta charset=utf-8>
+          <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+          <title>Error 400 (Bad Request)!!1</title>
+          <style>
+            *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
+          </style>
+          <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
+          <p><b>400.</b> <ins>That’s an error.</ins>
+          <p>Your client has issued a malformed or illegal request.  <ins>That’s all we know.</ins>
+  recorded_at: Fri, 28 Oct 2022 10:02:46 GMT
+- request:
+    method: get
     uri: https://www.googleapis.com/youtube/v3/search?key=<YOUTUBE_TOKEN>&maxResults=5&part=snippet&q=taylor%20swift%20offical&type=video
     body:
       encoding: UTF-8
@@ -27,7 +70,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Sun, 23 Oct 2022 02:33:17 GMT
+      - Fri, 28 Oct 2022 10:02:46 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -52,7 +95,7 @@ http_interactions:
       string: |
         {
           "kind": "youtube#searchListResponse",
-          "etag": "w5nB343-6JLi_PNoDhVzLoQc4VA",
+          "etag": "EZ-waBRX7N-PW7RRH9VYwigSIhI",
           "nextPageToken": "CAUQAA",
           "regionCode": "TW",
           "pageInfo": {
@@ -62,7 +105,7 @@ http_interactions:
           "items": [
             {
               "kind": "youtube#searchResult",
-              "etag": "S89CL-40dF_XkyTDreR3ckcenc4",
+              "etag": "0eJSNAxJd562y0LVxYNKzKnl8nM",
               "id": {
                 "kind": "youtube#video",
                 "videoId": "b1kbLwvqugk"
@@ -96,7 +139,109 @@ http_interactions:
             },
             {
               "kind": "youtube#searchResult",
-              "etag": "dTICJhHk6fmTYeroicAc9epGBdI",
+              "etag": "gZCW4P3W8o8N2eTURsZG1CuxuWA",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "b7QlX3yR2xs"
+              },
+              "snippet": {
+                "publishedAt": "2022-10-25T04:00:09Z",
+                "channelId": "UCANLZYMidaCbLQFWXBC95Jg",
+                "title": "Taylor Swift - Bejeweled (Official Music Video)",
+                "description": "Official music video for “Bejeweled” by Taylor Swift from the album 'Midnights'. Buy/Download/Stream 'Midnights': ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/b7QlX3yR2xs/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/b7QlX3yR2xs/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/b7QlX3yR2xs/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "TaylorSwiftVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-10-25T04:00:09Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "qp0p2m66Z7opplVgZstPOIu_rEA",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "RsEZmictANA"
+              },
+              "snippet": {
+                "publishedAt": "2020-12-11T05:00:10Z",
+                "channelId": "UCANLZYMidaCbLQFWXBC95Jg",
+                "title": "Taylor Swift - willow (Official Music Video)",
+                "description": "Official music video by Taylor Swift performing “willow” – off her evermore album. Listen to the album here: ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/RsEZmictANA/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/RsEZmictANA/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/RsEZmictANA/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "TaylorSwiftVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2020-12-11T05:00:10Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "CRVW6Aj9f2FMBciR8zAnBJZxHpM",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "e-ORhEE9VVg"
+              },
+              "snippet": {
+                "publishedAt": "2014-11-10T17:05:44Z",
+                "channelId": "UCANLZYMidaCbLQFWXBC95Jg",
+                "title": "Taylor Swift - Blank Space",
+                "description": "Exclusive Merch: https://store.taylorswift.com ▻Follow Taylor Swift Online Instagram: http://www.instagram.com/taylorswift ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/e-ORhEE9VVg/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/e-ORhEE9VVg/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/e-ORhEE9VVg/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "TaylorSwiftVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2014-11-10T17:05:44Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "ZGRF7trFg-w_zPfp4_yRIVvMFZQ",
               "id": {
                 "kind": "youtube#video",
                 "videoId": "rg18Kf4en2o"
@@ -127,155 +272,10 @@ http_interactions:
                 "liveBroadcastContent": "none",
                 "publishTime": "2022-10-22T00:00:29Z"
               }
-            },
-            {
-              "kind": "youtube#searchResult",
-              "etag": "Uo2eMhuSWRQXvMq4mRfsPLLBQFc",
-              "id": {
-                "kind": "youtube#video",
-                "videoId": "ySZGZrcqvr4"
-              },
-              "snippet": {
-                "publishedAt": "2022-10-22T00:00:37Z",
-                "channelId": "UCANLZYMidaCbLQFWXBC95Jg",
-                "title": "Taylor Swift - Paris (Official Lyric Video)",
-                "description": "Listen to \"Paris\" by Taylor Swift from the album 'Midnights (3am Edition)' Buy/Download/Stream 'Midnights (3am Edition)': ...",
-                "thumbnails": {
-                  "default": {
-                    "url": "https://i.ytimg.com/vi/ySZGZrcqvr4/default.jpg",
-                    "width": 120,
-                    "height": 90
-                  },
-                  "medium": {
-                    "url": "https://i.ytimg.com/vi/ySZGZrcqvr4/mqdefault.jpg",
-                    "width": 320,
-                    "height": 180
-                  },
-                  "high": {
-                    "url": "https://i.ytimg.com/vi/ySZGZrcqvr4/hqdefault.jpg",
-                    "width": 480,
-                    "height": 360
-                  }
-                },
-                "channelTitle": "TaylorSwiftVEVO",
-                "liveBroadcastContent": "none",
-                "publishTime": "2022-10-22T00:00:37Z"
-              }
-            },
-            {
-              "kind": "youtube#searchResult",
-              "etag": "JrxdeROvWgCKKBYchqhLbODnjzE",
-              "id": {
-                "kind": "youtube#video",
-                "videoId": "XqN2qFvY64U"
-              },
-              "snippet": {
-                "publishedAt": "2022-10-22T00:00:14Z",
-                "channelId": "UCANLZYMidaCbLQFWXBC95Jg",
-                "title": "Taylor Swift - Anti-Hero (Official Lyric Video)",
-                "description": "Listen to “Anti-Hero” by Taylor Swift from the album 'Midnights'. Buy/Download/Stream 'Midnights': ...",
-                "thumbnails": {
-                  "default": {
-                    "url": "https://i.ytimg.com/vi/XqN2qFvY64U/default.jpg",
-                    "width": 120,
-                    "height": 90
-                  },
-                  "medium": {
-                    "url": "https://i.ytimg.com/vi/XqN2qFvY64U/mqdefault.jpg",
-                    "width": 320,
-                    "height": 180
-                  },
-                  "high": {
-                    "url": "https://i.ytimg.com/vi/XqN2qFvY64U/hqdefault.jpg",
-                    "width": 480,
-                    "height": 360
-                  }
-                },
-                "channelTitle": "TaylorSwiftVEVO",
-                "liveBroadcastContent": "none",
-                "publishTime": "2022-10-22T00:00:14Z"
-              }
-            },
-            {
-              "kind": "youtube#searchResult",
-              "etag": "uPq338zUWIZJ3Mmwpw7voWzL-NU",
-              "id": {
-                "kind": "youtube#video",
-                "videoId": "Odh9ddPUkEY"
-              },
-              "snippet": {
-                "publishedAt": "2022-10-22T00:00:13Z",
-                "channelId": "UCANLZYMidaCbLQFWXBC95Jg",
-                "title": "Taylor Swift - Midnight Rain (Official Lyric Video)",
-                "description": "Listen to “ Midnight Rain e” by Taylor Swift from the album 'Midnights'. Buy/Download/Stream 'Midnights': ...",
-                "thumbnails": {
-                  "default": {
-                    "url": "https://i.ytimg.com/vi/Odh9ddPUkEY/default.jpg",
-                    "width": 120,
-                    "height": 90
-                  },
-                  "medium": {
-                    "url": "https://i.ytimg.com/vi/Odh9ddPUkEY/mqdefault.jpg",
-                    "width": 320,
-                    "height": 180
-                  },
-                  "high": {
-                    "url": "https://i.ytimg.com/vi/Odh9ddPUkEY/hqdefault.jpg",
-                    "width": 480,
-                    "height": 360
-                  }
-                },
-                "channelTitle": "TaylorSwiftVEVO",
-                "liveBroadcastContent": "none",
-                "publishTime": "2022-10-22T00:00:13Z"
-              }
             }
           ]
         }
-  recorded_at: Sun, 23 Oct 2022 02:33:17 GMT
-- request:
-    method: get
-    uri: https://www.googleapis.com/youtube/v3/search?key=<YOUTUBE_TOKEN>&maxResults=5&part=snippet&q=wrong%20path&type=video
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Connection:
-      - close
-      Host:
-      - www.googleapis.com
-      User-Agent:
-      - http.rb/5.1.0
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Content-Type:
-      - text/html; charset=UTF-8
-      Referrer-Policy:
-      - no-referrer
-      Content-Length:
-      - '1555'
-      Date:
-      - Sun, 23 Oct 2022 02:33:17 GMT
-    body:
-      encoding: UTF-8
-      string: |
-        <!DOCTYPE html>
-        <html lang=en>
-          <meta charset=utf-8>
-          <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
-          <title>Error 400 (Bad Request)!!1</title>
-          <style>
-            *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
-          </style>
-          <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
-          <p><b>400.</b> <ins>That’s an error.</ins>
-          <p>Your client has issued a malformed or illegal request.  <ins>That’s all we know.</ins>
-  recorded_at: Sun, 23 Oct 2022 02:33:17 GMT
+  recorded_at: Fri, 28 Oct 2022 10:02:46 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/search?key=BAD_TOKEN&maxResults=5&part=snippet&q=taylor%20swift%20offical&type=video
@@ -303,7 +303,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sun, 23 Oct 2022 02:33:17 GMT
+      - Fri, 28 Oct 2022 10:02:46 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -350,113 +350,5 @@ http_interactions:
             ]
           }
         }
-  recorded_at: Sun, 23 Oct 2022 02:33:17 GMT
-- request:
-    method: get
-    uri: https://www.googleapis.com/youtube/v3/search?key=&maxResults=5&part=snippet&q=taylor%20swift%20offical&type=video
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Connection:
-      - close
-      Host:
-      - www.googleapis.com
-      User-Agent:
-      - http.rb/5.1.0
-  response:
-    status:
-      code: 403
-      message: Forbidden
-    headers:
-      Vary:
-      - Origin,Accept-Encoding
-      - Referer
-      - X-Origin
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Sun, 23 Oct 2022 12:57:05 GMT
-      Server:
-      - scaffolding on HTTPServer2
-      Cache-Control:
-      - private
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Accept-Ranges:
-      - none
-      Transfer-Encoding:
-      - chunked
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
-        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "error": {
-            "code": 403,
-            "message": "The request is missing a valid API key.",
-            "errors": [
-              {
-                "message": "The request is missing a valid API key.",
-                "domain": "global",
-                "reason": "forbidden"
-              }
-            ],
-            "status": "PERMISSION_DENIED"
-          }
-        }
-  recorded_at: Sun, 23 Oct 2022 12:57:07 GMT
-- request:
-    method: get
-    uri: https://www.googleapis.com/youtube/v3/search?key=&maxResults=5&part=snippet&q=wrong%20path&type=video
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Connection:
-      - close
-      Host:
-      - www.googleapis.com
-      User-Agent:
-      - http.rb/5.1.0
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Content-Type:
-      - text/html; charset=UTF-8
-      Referrer-Policy:
-      - no-referrer
-      Content-Length:
-      - '1555'
-      Date:
-      - Sun, 23 Oct 2022 12:57:05 GMT
-    body:
-      encoding: UTF-8
-      string: |
-        <!DOCTYPE html>
-        <html lang=en>
-          <meta charset=utf-8>
-          <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
-          <title>Error 400 (Bad Request)!!1</title>
-          <style>
-            *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
-          </style>
-          <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
-          <p><b>400.</b> <ins>That’s an error.</ins>
-          <p>Your client has issued a malformed or illegal request.  <ins>That’s all we know.</ins>
-  recorded_at: Sun, 23 Oct 2022 12:57:08 GMT
+  recorded_at: Fri, 28 Oct 2022 10:02:46 GMT
 recorded_with: VCR 6.1.0

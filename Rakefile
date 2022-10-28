@@ -16,6 +16,7 @@ end
 
 desc 'run tests'
 task :spec do
+  sh 'ruby spec/fixtures/search_info.rb'
   sh 'ruby spec/yt_api_spec.rb'
 end
 
@@ -30,7 +31,7 @@ end
 
 namespace :quality do
   desc 'run all static-analysis quality checks'
-  task all: %i[rubocop reek flog]
+  task all: %i[rubocop flog reek]
 
   desc 'code style linter'
   task :rubocop do
