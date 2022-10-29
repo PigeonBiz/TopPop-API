@@ -6,6 +6,15 @@ task :default do
   puts `rake -T`
 end
 
+desc 'setup hidden files'
+task :setup do
+  mkdir 'config'
+  sh 'touch config/secrets.yml'
+  sh 'echo --- >> config/secrets.yml'
+  sh 'echo   ACCESS_TOKEN: >> config/secrets.yml'
+  sh 'nano config/secrets.yml'
+end
+
 desc 'run tests'
 task :spec do
   sh 'ruby spec/yt_api_spec.rb'

@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
 require 'roda'
-require 'slim'
 
 module YoutubeInformation
   # Web App
   class App < Roda
-    plugin :render, engine: 'slim', views: 'app/views'
+    plugin :render, views: 'app/views'
     plugin :assets, css: 'style.css', path: 'app/views/assets'
     plugin :common_logger, $stderr
     plugin :halt
@@ -25,7 +24,7 @@ module YoutubeInformation
           # POST /search/
           routing.post do
             yt_search_keyword = routing.params['search_keyword'].downcase
-            yt_search_keyword.gsub! ' ', '%20'
+            yt_search_keyword.gsub!(' ', '%20')
 
             routing.redirect "search/#{yt_search_keyword}"
           end
