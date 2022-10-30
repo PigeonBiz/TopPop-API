@@ -1,19 +1,19 @@
 {
   "RSpec": {
     "coverage": {
-      "/mnt/d/File/SOA/TopPop_API/require_app.rb": {
+      "/Users/shinstar5/Documents/111-1/SOA/Project/TopPop_API/require_app.rb": {
         "lines": [
           null,
           null,
           null,
           1,
           1,
-          6,
+          7,
           null,
           null
         ]
       },
-      "/mnt/d/File/SOA/TopPop_API/lib/entities/information.rb": {
+      "/Users/shinstar5/Documents/111-1/SOA/Project/TopPop_API/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -23,22 +23,13 @@
           1,
           null,
           1,
-          null,
           1,
           1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
           null,
           null
         ]
       },
-      "/mnt/d/File/SOA/TopPop_API/lib/entities/video.rb": {
+      "/Users/shinstar5/Documents/111-1/SOA/Project/TopPop_API/app/controllers/app.rb": {
         "lines": [
           null,
           null,
@@ -50,88 +41,37 @@
           1,
           1,
           1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/mnt/d/File/SOA/TopPop_API/lib/gateways/youtube_api.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
           1,
           1,
           null,
           1,
-          1,
-          4,
+          0,
+          0,
           null,
           null,
-          1,
-          4,
+          0,
+          0,
           null,
           null,
-          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
           0,
           null,
           null,
           null,
-          1,
-          1,
+          0,
           null,
-          1,
-          4,
-          null,
-          null,
-          1,
-          4,
-          null,
-          null,
-          1,
-          4,
-          null,
-          null,
-          1,
-          4,
-          null,
-          4,
-          4,
+          0,
+          0,
           null,
           null,
           null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          4,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/mnt/d/File/SOA/TopPop_API/lib/init.rb": {
-        "lines": [
-          null,
-          null,
+          0,
           null,
           null,
           null,
@@ -140,11 +80,122 @@
           null
         ]
       },
-      "/mnt/d/File/SOA/TopPop_API/lib/mappers/search_mapper.rb": {
+      "/Users/shinstar5/Documents/111-1/SOA/Project/TopPop_API/app/models/entities/information.rb": {
         "lines": [
           null,
           null,
           1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/shinstar5/Documents/111-1/SOA/Project/TopPop_API/app/models/entities/video.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/shinstar5/Documents/111-1/SOA/Project/TopPop_API/app/models/gateways/youtube_api.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          4,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/shinstar5/Documents/111-1/SOA/Project/TopPop_API/app/models/mappers/search_mapper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
           null,
           1,
           1,
@@ -206,7 +257,7 @@
           null
         ]
       },
-      "/mnt/d/File/SOA/TopPop_API/lib/mappers/video_mapper.rb": {
+      "/Users/shinstar5/Documents/111-1/SOA/Project/TopPop_API/app/models/mappers/video_mapper.rb": {
         "lines": [
           null,
           null,
@@ -268,6 +319,6 @@
         ]
       }
     },
-    "timestamp": 1666716952
+    "timestamp": 1666961706
   }
 }
