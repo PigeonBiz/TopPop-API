@@ -1,25 +1,30 @@
-<div class="container">
+<div class="container px-lg-5">
   <div class="row">
-    <p>Search results:</p>
+    <h2 class="fs-4 fw-bold">Search results:</h2>
   </div>
 
-  <div class="row top-buffer">
-    <div class="col-lg-11 col-md-10 col-sm-6">
-      <div class="row">
-        <% search.videos.each do |video| %>
-          <div class="col-sm-12">
-            <p>Song name: <%= video.title %></p>
-            <p>Link: 
-              <a class="search detail" href="https://www.youtube.com/watch?v=<%= video.video_id %>">
-                https://www.youtube.com/watch?v=<%= video.video_id %>
-              </a>
-            </p>
-            <p>Publish date: <%= video.publish_date %></p>
-            <p>Channel: <%= video.channel_title%></p>
-            <br />
+  <div class="row">
+    <div class="pt-4">
+      <% search.videos.each do |video| %>
+        <div class="col-sm-12">
+          <div class="row mb-3">
+            <label class="col-sm-3"}><strong>Video</strong></label>
+            <div class="col-sm-9">
+              <a href="https://www.youtube.com/watch?v=<%= video.video_id %>">
+                <%= video.title %>
+              </a></div>
           </div>
-        <% end %>
-      </div>
+          <div class="row mb-3">
+            <label class="col-sm-3"><strong>Publish date</strong></label>
+            <div class="col-sm-9"><%= video.publish_date %></div>
+          </div>
+          <div class="row mb-3">
+            <label class="col-sm-3"><strong>Channel</strong></label>
+            <div class="col-sm-9"><%= video.channel_title %></div>
+          </div>
+        <br/>
+        <br/>
+      <% end %>
     </div>
   </div>
 </div>

@@ -12,24 +12,22 @@
     <script crossorigin="anonymous" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script crossorigin="anonymous" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
 
-    <div class="container" id="html_body">
-      <section>
-        <div class="row" style="vertical-align: middle;">
-          <div class="col-12">
-            <h1>
-              <a class="text-underline-hover" href="/">TopPop</a>
-            </h1>
-          </div>
-        </div>
-      </section>
-    </div>
 
-    <section>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container px-lg-5">
+        <a class="navbar-brand" href="/">TopPop</a>
+      </div>
+    </nav>
+
+
+    <section class="pt-4">
       <%= yield %>
     </section>
 
-    <footer>
-      <%= "Copyright © 2022 PigeonBiz. All rights reserved. TopPop may use cookies for sessions but does not track users." %>
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright © 2022 PigeonBiz. All rights reserved. TopPop may use cookies for sessions but does not track users.</p>
+      </div>
     </footer>
   </body>
 </html>
