@@ -14,6 +14,10 @@ module YoutubeInformation
         Request.new(@yt_token).search_video(search, count).parse
       end
 
+      def video_data(video_id)
+        Request.new(@yt_token).get_video_info(video_id).parse
+      end
+
       # Sends out HTTP requests to Youtube
       class Request
         API_SEARCH_ROOT = 'https://www.googleapis.com/youtube/v3'
@@ -22,12 +26,20 @@ module YoutubeInformation
           @yt_token = token
         end
 
-        def yt_api_path(search, count)
+        def yt_search_api_path(search, count)
           "#{API_SEARCH_ROOT}/search?part=snippet&q=#{search}&key=#{@yt_token}&type=video&maxResults=#{count}"
         end
 
+        def yt_video_api_path(video_id)
+          "#{API_SEARCH_ROOT}/videos?part=statistics,snippet&id=#{video_id}&key=#{@yt_token}"
+        end
+
         def search_video(search, count)
-          get(yt_api_path(search, count))
+          get(yt_search_api_path(search, count))
+        end
+
+        def get_video_info(video_id)
+          get(yt_video_api_path(video_id))
         end
 
         def get(url)

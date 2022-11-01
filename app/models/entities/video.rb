@@ -13,6 +13,9 @@ module YoutubeInformation
       attribute :title,           Strict::String
       attribute :publish_date,    Strict::String
       attribute :channel_title,   Strict::String
+      attribute :view_count,      Strict::Integer
+      attribute :like_count,      Strict::Integer
+      attribute :comment_count,   Strict::Integer
     end
   end
 end

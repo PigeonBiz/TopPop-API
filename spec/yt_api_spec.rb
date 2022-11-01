@@ -66,6 +66,15 @@ describe 'Tests Youtube API library' do # rubocop:disable Metrics/BlockLength
 
         videos_publish_date = videos.map(&:publish_date)
         _(videos_publish_date).wont_be_nil
+
+        videos_view_count = videos.map(&:view_count)
+        _(videos_view_count).wont_be_nil
+
+        videos_like_count = videos.map(&:like_count)
+        _(videos_like_count).wont_be_nil
+
+        videos_comment_count = videos.map(&:comment_count)
+        _(videos_comment_count).wont_be_nil
       end
     end
   end
