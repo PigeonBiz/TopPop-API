@@ -18,13 +18,14 @@ module YoutubeInformation
       end
 
       def build_entity(data)
-        DataMapper.new(data).build_entity
+        DataMapper.new(data, @yt_token).build_entity
       end
 
       # Extracts entity specific elements from data structure
       class DataMapper
-        def initialize(data)
+        def initialize(data, yt_token)
           @data = data
+          @yt_token = yt_token
         end
 
         def build_entity
@@ -54,7 +55,7 @@ module YoutubeInformation
         end
 
         def videos
-          VideoMapper.new(@data['items']).build2vid
+          VideoMapper.new(@yt_token, @data['items']).build2vid
         end
       end
     end

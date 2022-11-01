@@ -5,13 +5,17 @@ module YoutubeInformation
   module Youtube
     # Data Mapper: Youtube search -> Video entity
     class VideoMapper
-      def initialize(videos_data)
+      def initialize(yt_token, videos_data, gateway_class = Youtube::Api)
+        @yt_token = yt_token
         @videos_data = videos_data
+        @gateway_class = gateway_class
+        @gateway = @gateway_class.new(@yt_token)
       end
 
       def build2vid
         @videos_data.map do |video_data|
-          VideoMapper.build_entity(video_data)
+          video_information = @gateway.video_data(video_data['id']['videoId'])
+          VideoMapper.build_entity(video_information['items'][0])
         end
       end
 
@@ -30,14 +34,17 @@ module YoutubeInformation
             video_id:,
             title:,
             publish_date:,
-            channel_title:
+            channel_title:,
+            view_count:,
+            like_count:,
+            comment_count:
           )
         end
 
         private
 
         def video_id
-          @video_data['id']['videoId']
+          @video_data['id']
         end
 
         def title
@@ -50,6 +57,18 @@ module YoutubeInformation
 
         def channel_title
           @video_data['snippet']['channelTitle']
+        end
+
+        def view_count
+          @video_data['statistics']['viewCount'].to_i
+        end
+
+        def like_count
+          @video_data['statistics']['likeCount'].to_i
+        end
+
+        def comment_count
+          @video_data['statistics']['commentCount'].to_i
         end
       end
     end
