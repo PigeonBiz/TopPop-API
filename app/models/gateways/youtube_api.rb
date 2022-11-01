@@ -22,12 +22,20 @@ module YoutubeInformation
           @yt_token = token
         end
 
-        def yt_api_path(search, count)
+        def yt_search_api_path(search, count)
           "#{API_SEARCH_ROOT}/search?part=snippet&q=#{search}&key=#{@yt_token}&type=video&maxResults=#{count}"
         end
 
+        def yt_video_api_path(video_id)
+          "#{API_SEARCH_ROOT}/videos?part=statistics,snippet&id=#{video_id}&key=#{@yt_token}"
+        end
+
         def search_video(search, count)
-          get(yt_api_path(search, count))
+          get(yt_search_api_path(search, count))
+        end
+        
+        def search_video(search, count)
+          get(yt_search_api_path(search, count))
         end
 
         def get(url)
