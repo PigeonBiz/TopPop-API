@@ -10,8 +10,8 @@ Sequel.migration do
       String      :name, unique: true, null: false
       Integer     :score, null: false
 
-      DateTime :created_at
-      DateTime :updated_at
+      DateTime :created_time
+      DateTime :updated_time
     end
   end
 end
