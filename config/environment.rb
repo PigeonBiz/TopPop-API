@@ -3,6 +3,7 @@
 require 'roda'
 require 'yaml'
 require 'figaro'
+require 'sequel'
 
 module YoutubeInformation
   # Configuration for the App
@@ -26,6 +27,5 @@ module YoutubeInformation
       DB = Sequel.connect(ENV.fetch('DATABASE_URL'))
       def self.DB = DB
     end
-
   end
 end
