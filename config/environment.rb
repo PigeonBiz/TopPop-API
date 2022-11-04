@@ -3,6 +3,7 @@
 require 'roda'
 require 'yaml'
 require 'figaro'
+require 'sequel'
 
 module YoutubeInformation
   # Configuration for the App
