@@ -13,13 +13,11 @@ describe 'Tests Youtube API library' do # rubocop:disable Metrics/BlockLength
   end
 
   describe 'Tests Youtube API search request' do
-    before do
-      yt_results = YoutubeInformation::Youtube::SearchMapper
-        .new(YOUTUBE_TOKEN)
-        .search(SEARCH_KEY_WORD, COUNT)
-    end
-
     it 'HAPPY: should provide correct search informations' do
+      yt_results = YoutubeInformation::Youtube::SearchMapper
+                   .new(YOUTUBE_TOKEN)
+                   .search(SEARCH_KEY_WORD, COUNT)
+
       _(yt_results.kind).must_equal CORRECT['kind']
       _(yt_results.etag).wont_be_nil
       _(yt_results.next_page_token).must_equal CORRECT['nextPageToken']
@@ -51,8 +49,8 @@ describe 'Tests Youtube API library' do # rubocop:disable Metrics/BlockLength
     describe 'Video information' do
       before do
         @video = YoutubeInformation::Youtube::SearchMapper
-          .new(YOUTUBE_TOKEN)
-          .search(SEARCH_KEY_WORD, COUNT)
+                 .new(YOUTUBE_TOKEN)
+                 .search(SEARCH_KEY_WORD, COUNT)
       end
 
       it 'HAPPY: should identify videos information' do

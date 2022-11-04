@@ -27,6 +27,5 @@ module YoutubeInformation
       DB = Sequel.connect(ENV.fetch('DATABASE_URL'))
       def self.DB = DB
     end
-
   end
 end
