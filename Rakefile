@@ -13,9 +13,15 @@ task :setup do
   sh 'touch config/secrets.yml'
 end
 
-desc 'run tests'
-task :spec do
-  sh 'ruby spec/yt_api_spec.rb'
+desc 'search new for once'
+task :searchnew do
+  sh 'ruby spec/fixtures/search_info.rb'
+end
+
+desc 'Run tests once'
+Rake::TestTask.new(:spec) do |t|
+  t.pattern = 'spec/*_spec.rb'
+  t.warning = false
 end
 
 desc 'Keep rerunning tests upon changes'
@@ -29,11 +35,6 @@ end
 
 task :rerun do
   sh "rerun -c --ignore 'coverage/*' -- bundle exec puma"
-end
-
-desc 'search new for once'
-task :searchnew do
-  sh 'ruby spec/fixtures/search_info.rb'
 end
 
 namespace :db do
