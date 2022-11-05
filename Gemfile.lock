@@ -106,14 +106,9 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    slim (4.1.0)
-      temple (>= 0.7.6, < 0.9)
-      tilt (>= 2.0.6, < 2.1)
     sqlite3 (1.5.3-x64-mingw-ucrt)
     sqlite3 (1.5.3-x86_64-linux)
-    temple (0.8.2)
     thor (1.2.1)
-    tilt (2.0.11)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
@@ -149,7 +144,6 @@ DEPENDENCIES
   rubocop
   sequel (~> 5.49)
   simplecov (~> 0)
-  slim (~> 4)
   sqlite3 (~> 1.4)
   vcr (~> 6)
   webmock (~> 3)

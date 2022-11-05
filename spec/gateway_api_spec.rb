@@ -5,7 +5,7 @@ require_relative 'helpers/vcr_helper'
 
 describe 'Tests Youtube API library' do # rubocop:disable Metrics/BlockLength
   before do
-    VcrHelper.configure_vcr_for_github
+    VcrHelper.configure_vcr_for_youtube
   end
 
   after do
