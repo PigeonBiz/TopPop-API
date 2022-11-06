@@ -9,7 +9,6 @@ end
 
 desc 'setup hidden files'
 task :setup do
-  mkdir 'config'
   sh 'touch config/secrets.yml'
 end
 
