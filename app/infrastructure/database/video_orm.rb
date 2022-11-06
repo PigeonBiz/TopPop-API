@@ -12,6 +12,6 @@ module YoutubeInformation
 
     # def self.find_or_create(player_info)
     #   first(name: player_info[:name]) || create(player_info)
-    end
+    # end
   end
 end

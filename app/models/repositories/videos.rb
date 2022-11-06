@@ -28,8 +28,7 @@ module YoutubeInformation
       end
 
       def self.create(entity)
-        #  return nil if find(entity)
-        raise 'Video already exists' if find(entity)
+        return nil if find(entity)
 
         db_video = PersistProject.new(entity).create_video
         rebuild_entity(db_video)
