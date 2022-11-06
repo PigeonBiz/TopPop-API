@@ -34,10 +34,9 @@ module YoutubeInformation
 
             channel_title = youtube_search.videos.first.channel_title
             # Add video to database
-            Repository::Videos.create(youtube_search.videos.each)
+            rebuilt = youtube_search.videos.map {|video|  YoutubeInformation::Repository::Videos.create(video)}
             
             # Redirect viewer to video page      
-            chennel    
             routing.redirect "search/#{channel_title}"
           end
         end
