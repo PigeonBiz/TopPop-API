@@ -6,12 +6,20 @@ AllCops:
   Exclude:
     - '_snippets/*'
   Include:
-  - 'Gemfile'
-  - 'Rakefile'
-
+    - 'Gemfile'
+    - 'Rakefile'
 
 # ignore block length in test code only
 Metrics/BlockLength:
   Enabled: true
   Exclude:
     - 'spec/**/*'
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+
+Style/HashSyntax:
+  Enabled: true
+  Exclude:
+    - 'Rakefile'

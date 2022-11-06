@@ -29,20 +29,63 @@ Create `config/secrets.yml` file:
 rake setup
 ```
 
-Nano will open `config/secrets.yml` for edition. Insert your access token in this format:
+Insert your access token to `secrets.yml`:
 ```yml
 ---
-  ACCESS_TOKEN: <YOUR_TOKEN_HERE>
+development:
+  DB_FILENAME: db/local/dev.db
+  ACCESS_TOKEN: <your_token_here>
+
+test:
+  DB_FILENAME: db/local/test.db
+  ACCESS_TOKEN: <your_token_here>
+
+production:
+  ACCESS_TOKEN: <your_token_here>
 ```
 
 
 ### 3. Launch the web app
 
-Run:
+<!-- Run:
 ```bash
 rake run
-```
+``` -->
+
+Run puma with your RACK_ENV (like `RACK_ENV=test puma`). Please don't run `rake run` we haven't fix the problem with this command.
+
 You should see the web app in port 9292 `http://localhost:9292/`.
+
+
+## Database
+1. ER Diagram
+   ![alt text](TopPopERDiagram.PNG "ER Diagram")
+2. Videos
+  - Has following columns
+    - id
+    - video_id
+      - uniqu
+      - not null
+    - title
+    - publish_date
+    - channel_title
+    - view_count
+      - not null
+    - like_count
+    - comment_count
+    - created_time
+    - updated_time
+3. Players
+  - Has following columns
+    - id
+    - name
+      - uniqu
+      - not null
+    - score
+      - not null
+    - created_time
+    - updated_time
+
 
 
 ## Branches
@@ -58,3 +101,5 @@ There are several branches with specific purposes on this repo:
 - The `data-mapper` branch applies Enterprise Design Patterns.
 
 - The `mvc` branch evolves with a web app following the Model-View-Controller (MVC) application architecture.
+
+- The `database` branch evolves with database service.
