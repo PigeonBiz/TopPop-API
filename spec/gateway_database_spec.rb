@@ -1,4 +1,4 @@
-# frozen_string_literal: false
+#frozen_string_literal: false
 
 require_relative 'spec_helper'
 require_relative 'helpers/vcr_helper'
@@ -20,31 +20,20 @@ describe 'Integration Tests of Youtube API and Database' do
       DatabaseHelper.wipe_database
     end
 
-    # it 'HAPPY: should be able to save video from Youtube to database' do
-    #   video = YoutubeInformation::Youtube::SearchMapper
-    #     .new(YOUTUBE_TOKEN)
-    #     .search(SEARCH_KEY_WORD, COUNT)
-    #
-    #   rebuilt = YoutubeInformation::Repository::For.entity(video).create(video)
-    #
-    #   videos = @video.videos # array?
-    #   _(rebuilt.videos_id).must_equal(videos.videos_id)
-    #   _(rebuilt.channel_title).must_equal(videos.channel_title)
-    #   _(rebuilt.videos_title).must_equal(videos.videos_title)
-    #   _(rebuilt.videos_publish_date).must_equal(videos.videos_publish_date)
-    #   _(rebuilt.view_count).must_equal(videos.view_count)
-    #   _(rebuilt.like_count).must_equal(videos.like_count)
-    #   _(rebuilt.comment_count).must_equal(videos.comment_count)
-    #
-    #   # delete?
-    #   videos.contributors.each do |member|
-    #     found = rebuilt.contributors.find do |potential|
-    #       potential.videos_id == member.videos_id
-    #     end
-    #
-    #     _(found.username).must_equal member.username
-    #     # not checking email as it is not always provided
-    #   end
-    # end
+    it 'HAPPY: should be able to save video from Youtube to database' do
+       youtube_search = YoutubeInformation::Youtube::SearchMapper
+         .new(YOUTUBE_TOKEN)
+         .search(SEARCH_KEY_WORD, COUNT)
+       rebuilt = youtube_search.videos.map {|video|  YoutubeInformation::Repository::Videos.create(video)}
+       videos = youtube_search.videos.first
+       _(rebuilt.first.video_id).must_equal(videos.video_id)
+       _(rebuilt.first.channel_title).must_equal(videos.channel_title)
+       _(rebuilt.first.title).must_equal(videos.title)
+       _(rebuilt.first.publish_date).must_equal(videos.publish_date)
+       _(rebuilt.first.view_count).must_equal(videos.view_count)
+       _(rebuilt.first.like_count).must_equal(videos.like_count)
+       _(rebuilt.first.comment_count).must_equal(videos.comment_count)
+
+       end
   end
 end
