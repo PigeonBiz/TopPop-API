@@ -16,6 +16,10 @@ module YoutubeInformation
       attribute :view_count,      Strict::Integer
       attribute :like_count,      Strict::Integer
       attribute :comment_count,   Strict::Integer
+
+      def to_attr_hash
+        to_hash
+      end
     end
   end
 end
