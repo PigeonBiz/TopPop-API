@@ -36,6 +36,5 @@ describe 'Integration Tests of Youtube API and Database' do
        _(rebuilt.first.comment_count).must_equal(videos.comment_count)
 
        end
-     end
   end
 end
