@@ -24,13 +24,12 @@ describe 'Integration Tests of Youtube API and Database' do
        youtube_search = YoutubeInformation::Youtube::SearchMapper
          .new(YOUTUBE_TOKEN)
          .search(SEARCH_KEY_WORD, COUNT)
-    
-       rebuilt = YoutubeInformation::Repository::For.entity(youtube_search.videos.each).create(youtube_search.videos.each)
+       rebuilt = youtube_search.videos.map {|video|  YoutubeInformation::Repository::Videos.create(video)}
        videos = youtube_search.videos.first
-       _(rebuilt.first.videos_id).must_equal(videos.videos_id)
+       _(rebuilt.first.video_id).must_equal(videos.video_id)
        _(rebuilt.first.channel_title).must_equal(videos.channel_title)
-       _(rebuilt.first.videos_title).must_equal(videos.videos_title)
-       _(rebuilt.first.videos_publish_date).must_equal(videos.videos_publish_date)
+       _(rebuilt.first.title).must_equal(videos.title)
+       _(rebuilt.first.publish_date).must_equal(videos.publish_date)
        _(rebuilt.first.view_count).must_equal(videos.view_count)
        _(rebuilt.first.like_count).must_equal(videos.like_count)
        _(rebuilt.first.comment_count).must_equal(videos.comment_count)

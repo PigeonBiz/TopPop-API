@@ -45,6 +45,7 @@ module YoutubeInformation
           like_count: db_record.like_count,
           comment_count: db_record.comment_count
         )
+        
       end
     end
   end

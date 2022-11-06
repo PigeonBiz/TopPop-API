@@ -16,7 +16,7 @@ module YoutubeInformation
 
       # GET /
       routing.root do
-        videos = Repository::For.klass(Entity::Video).all
+        videos = Repository::Videos.all
         view 'home',locals: { videos: }
       end
 
@@ -34,7 +34,7 @@ module YoutubeInformation
 
             channel_title = youtube_search.videos.first.channel_title
             # Add video to database
-            Repository::For.entity(youtube_search.videos.each).create(youtube_search.videos.each)
+            Repository::Videos.create(youtube_search.videos.each)
             
             # Redirect viewer to video page      
             chennel    
@@ -46,7 +46,7 @@ module YoutubeInformation
           # GET /search/keyword
           routing.get do
             # Get project from database
-            chennelvideo = Repository::For.klass(Entity::Video)
+            chennelvideo = Repository::Videos
               .find_full(channel_title)
 
             view 'search', locals: { search: chennelvideo }
