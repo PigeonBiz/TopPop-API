@@ -14,7 +14,6 @@ module YoutubeInformation
         rebuild_entity(db_video.each)
       end
 
-
       def self.find(entity)
         find_video_id(entity.video_id)
       end
@@ -29,8 +28,11 @@ module YoutubeInformation
       end
 
       def self.create(entity)
+        #  return nil if find(entity)
         raise 'Video already exists' if find(entity)
-        rebuild_entity(entity)
+
+        db_video = PersistProject.new(entity).create_video
+        rebuild_entity(db_video)
       end
 
       def self.rebuild_entity(db_record)
@@ -45,7 +47,17 @@ module YoutubeInformation
           like_count: db_record.like_count,
           comment_count: db_record.comment_count
         )
-        
+      end
+
+      # Helper class to persist videos to database
+      class PersistProject
+        def initialize(entity)
+          @entity = entity
+        end
+
+        def create_video
+          Database::VideoOrm.create(@entity.to_attr_hash)
+        end
       end
     end
   end

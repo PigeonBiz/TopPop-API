@@ -31,12 +31,13 @@ module YoutubeInformation
             youtube_search = Youtube::SearchMapper
                              .new(App.config.ACCESS_TOKEN)
                              .search(yt_search_keyword, 5)
-
+                            
             channel_title = youtube_search.videos.first.channel_title
+
             # Add video to database
-            rebuilt = youtube_search.videos.map {|video|  YoutubeInformation::Repository::Videos.create(video)}
+            youtube_search.videos.map {|video| Repository::Videos.create(video)}
             
-            # Redirect viewer to video page      
+            # Redirect viewer to search page      
             routing.redirect "search/#{channel_title}"
           end
         end
