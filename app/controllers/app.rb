@@ -44,11 +44,11 @@ module YoutubeInformation
         routing.on String do |channel_title|
           # GET /search/keyword
           routing.get do
-            # Get project from database
-            chennelvideo = Repository::Videos
-              .find_full(channel_title)
-
-            view 'search', locals: { search: chennelvideo }
+            # Get videos from database
+            #chennelvideo = Repository::Videos
+            #  .find_full(channel_title)
+            videos = Repository::Videos.all
+            view 'search', locals: { videos: }
           end
         end
       end
