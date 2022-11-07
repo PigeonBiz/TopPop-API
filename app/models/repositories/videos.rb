@@ -8,18 +8,8 @@ module YoutubeInformation
         Database::VideoOrm.all.map { |db_video| rebuild_entity(db_video) }
       end
 
-      def self.find_full(channel_title)
-        db_video = Database::VideoOrm
-          .where(channel_title: channel_title)
-        rebuild_entity(db_video.each)
-      end
-
       def self.find(entity)
         find_video_id(entity.video_id)
-      end
-
-      def self.channel_title(channel_title)
-        rebuild_entity Database::VideoOrm.first(channel_title:)
       end
 
       def self.find_video_id(video_id)

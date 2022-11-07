@@ -17,7 +17,7 @@ module YoutubeInformation
       # GET /
       routing.root do
         videos = Repository::Videos.all
-        view 'home',locals: { videos: }
+        view 'home', locals: { videos: }
       end
 
       routing.on 'search' do
@@ -30,24 +30,20 @@ module YoutubeInformation
             # Get video from Github
             youtube_search = Youtube::SearchMapper
                              .new(App.config.ACCESS_TOKEN)
-                             .search(yt_search_keyword, 5)
-                            
-            channel_title = youtube_search.videos.first.channel_title
+                             .search(yt_search_keyword, 5)                            
 
             # Add video to database
             youtube_search.videos.map {|video| Repository::Videos.create(video)}
             
             # Redirect viewer to search page      
-            routing.redirect "search/#{channel_title}"
+            routing.redirect "search/#{yt_search_keyword}"
           end
         end
 
-        routing.on String do |channel_title|
+        routing.on String do |yt_search_keyword|
           # GET /search/keyword
           routing.get do
             # Get videos from database
-            #chennelvideo = Repository::Videos
-            #  .find_full(channel_title)
             videos = Repository::Videos.all
             view 'search', locals: { videos: }
           end
