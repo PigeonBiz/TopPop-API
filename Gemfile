@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
+ruby File.read('.ruby-version').strip
 
 # Configuration and Utilities
 gem 'figaro', '~> 1.2'
@@ -35,8 +36,14 @@ group :test do
   gem 'webmock', '~> 3'
 end
 
+# Development
 group :development do
   gem 'rerun', '~> 0'
+end
+
+# Production
+group :production do
+  gem 'pg'
 end
 
 # Debugging
