@@ -59,10 +59,11 @@ You should see the web app in port 9292 `http://localhost:9292/`.
 
 ## Database
 1. ER Diagram
-   ![alt text](TopPopERDiagram.PNG "ER Diagram")
+   ![alt text](TopPopERDiagram.jpg "ER Diagram")
 2. Videos
   - Has following columns
     - id
+      - PK
     - video_id
       - uniqu
       - not null
@@ -75,16 +76,35 @@ You should see the web app in port 9292 `http://localhost:9292/`.
     - comment_count
     - created_time
     - updated_time
-3. Players
+3. daily_videos
   - Has following columns
     - id
+      - PK
+    - video_id
+      - FK
+      - not null
+    - ranking
+      - not null
+    - created_time
+4. Players
+  - Has following columns
+    - id
+      - PK
     - name
       - uniqu
+      - not null
+    - created_time
+    - updated_time
+5. Scores
+  - Has following columns
+    - id
+      - PK
+    - player_id
+      - FK
       - not null
     - score
       - not null
     - created_time
-    - updated_time
 
 
 
