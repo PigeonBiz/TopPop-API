@@ -4,7 +4,6 @@ require_relative 'video_mapper'
 
 module YoutubeInformation
   module Youtube
-    # Data Mapper: Github repo -> Project entity
     class SearchMapper
       def initialize(yt_token, gateway_class = Youtube::Api)
         @yt_token = yt_token
