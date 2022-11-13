@@ -9,7 +9,7 @@ module ScoreInformation
       end
 
       def self.find(entity)
-        find_score_id(entity.score_id)
+        find_score_id(entity.player_name)
       end
 
       def self.find_score_id(score_id)
