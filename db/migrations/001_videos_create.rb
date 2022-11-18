@@ -15,8 +15,8 @@ Sequel.migration do
       Integer     :like_count
       Integer     :comment_count
 
-      DateTime  :created_time
-      DateTime  :updated_time
+      DateTime  :created_at
+      DateTime  :updated_at
     end
   end
 end
