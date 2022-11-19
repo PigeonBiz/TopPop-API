@@ -3,7 +3,7 @@
 require 'dry-types'
 require 'dry-struct'
 
-module YoutubeInformation
+module PlayerInformation
   # Provides access to video data
   module Entity
     class Score < Dry::Struct

@@ -5,14 +5,13 @@ module PlayerInformation
   module Player
     # Data Mapper: Player search -> Score entity
     class ScoreMapper
-      def initialize(score, player_id, gateway_class = Player::Api)
+      def initialize(score, player_id)
         @scores_data['score'] = score
         @scores_data['player_id'] = player_id
-        @gateway_class = gateway_class
       end
 
-      def build2sid
-        VideoMapper.build_entity(@scores_data)
+      def build2id
+        ScoreMapper.build_entity(@scores_data)
       end
 
       def self.build_entity(score_data)
