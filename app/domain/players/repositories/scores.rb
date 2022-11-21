@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module ScoreInformation
+module PlayerInformation
   module Repository
     # Repository for Score Entities
     class Scores
@@ -28,9 +28,8 @@ module ScoreInformation
         return nil unless db_record
 
         Entity::Score.new(
-          id: db_record.id,
-          id: db_record.player_id,
-          name: db_record.score
+          player_id: db_record.player_id,
+          score: db_record.score
         )
       end
 

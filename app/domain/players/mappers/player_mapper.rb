@@ -4,8 +4,8 @@ require_relative 'score_mapper'
 
 module PlayerInformation
   module Player
-    class SearchMapper
-      def initialize(name, score, gateway_class = Player::Api)
+    class PlayerMapper
+      def initialize(name, score)
         @data['name'] = name
         @data['score'] = score
       end
@@ -25,7 +25,7 @@ module PlayerInformation
         end
 
         def build_entity
-          Entity::Information.new(
+          Entity::Player.new(
             name:,
             scores:
           )
@@ -36,7 +36,7 @@ module PlayerInformation
         end
 
         def scores
-          ScoreMapper.new(@player_data['score'], player_id).build2sid
+          ScoreMapper.new(@player_data['score'], player_id).build2id
         end
       end
     end

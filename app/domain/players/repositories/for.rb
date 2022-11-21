@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-require_relative 'videos'
+require_relative 'players'
+require_relative 'scores'
 
-module YoutubeInformation
+module PlayerInformation
   module Repository
     # Finds the right repository for an entity object or class
     module For
       ENTITY_REPOSITORY = {
-        Entity::Video => Videos,
+        Entity::Player => Players,
+        Entity::Score => Scores,
       }.freeze
 
       def self.klass(entity_klass)
