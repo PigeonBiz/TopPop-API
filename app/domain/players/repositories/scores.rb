@@ -20,7 +20,7 @@ module PlayerInformation
       def self.create(entity)
         return nil if find(entity)
 
-        db_score = PersistProject.new(entity).create_score
+        db_score = PersistVideo.new(entity).create_score
         rebuild_entity(db_score)
       end
 
@@ -34,7 +34,7 @@ module PlayerInformation
       end
 
       # Helper class to persist scores to database
-      class PersistProject
+      class PersistVideo
         def initialize(entity)
           @entity = entity
         end

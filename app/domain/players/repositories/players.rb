@@ -20,7 +20,7 @@ module PlayerInformation
       def self.create(entity)
         return nil if find(entity)
 
-        db_player = PersistProject.new(entity).create_player
+        db_player = PersistVideo.new(entity).create_player
         rebuild_entity(db_player)
       end
 
@@ -34,7 +34,7 @@ module PlayerInformation
       end
 
       # Helper class to persist players to database
-      class PersistProject
+      class PersistVideo
         def initialize(entity)
           @entity = entity
         end

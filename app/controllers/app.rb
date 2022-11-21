@@ -27,7 +27,7 @@ module YoutubeInformation
             yt_search_keyword = routing.params['search_keyword'].downcase
             yt_search_keyword.gsub!(' ', '%20')
             
-            # Get video from Github
+            # Get video from Youtube
             youtube_search = Youtube::SearchMapper
                              .new(App.config.ACCESS_TOKEN)
                              .search(yt_search_keyword, 5)                            
