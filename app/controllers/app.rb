@@ -9,6 +9,11 @@ module YoutubeInformation
     plugin :assets, css: 'style.css', path: 'app/views/assets'
     plugin :common_logger, $stderr
     plugin :halt
+    plugin :flash
+    plugin :all_verbs # allows HTTP verbs beyond GET/POST (e.g., DELETE)
+    plugin :common_logger, $stderr
+
+    use Rack::MethodOverride 
 
     route do |routing|
       routing.assets # load CSS
@@ -16,8 +21,22 @@ module YoutubeInformation
 
       # GET /
       routing.root do
-        videos = Repository::Videos.all
-        view 'home', locals: { videos: }
+        # Get cookie viewer's previously seen videos
+        session[:watching] ||= []        
+        
+        # Load previously viewed videos
+        videos = Repository::For.klass(Entity::Video)
+          .find_video_ids(session[:watching])
+
+        session[:watching] = videos.map(&:video_id)
+
+        if videos.none?
+          flash.now[:notice] = 'Search a keyword to get started'
+        end
+
+        viewable_videos = Views::VideoList.new(videos)
+
+        view 'home', locals: { viewable_videos: }
       end
 
       routing.on 'search' do

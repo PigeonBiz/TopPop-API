@@ -17,6 +17,10 @@ module YoutubeInformation
         rebuild_entity(db_record)
       end
 
+      def self.find_video_ids(video_ids)
+        video_ids.map { |video_id| find_video_id(video_id) }
+      end
+
       def self.create(entity)
         return nil if find(entity)
 

@@ -10,6 +10,7 @@ gem 'rake'
 # Web Application
 gem 'puma', '~> 6'
 gem 'roda', '~> 3'
+gem 'rack-session', '~> 0.3'
 gem 'tilt'
 
 # Validation

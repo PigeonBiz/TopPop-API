@@ -36,6 +36,14 @@ task :rerun do
   sh "rerun -c --ignore 'coverage/*' -- bundle exec puma"
 end
 
+desc 'Generates a 64 by secret for Rack::Session'
+task :new_session_secret do
+  require 'base64'
+  require 'SecureRandom'
+  secret = SecureRandom.random_bytes(64).then { Base64.urlsafe_encode64(_1) }
+  puts "SESSION_SECRET: #{secret}"
+end
+
 namespace :db do
   task :config do
     require 'sequel'
