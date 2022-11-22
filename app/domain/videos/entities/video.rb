@@ -20,6 +20,10 @@ module YoutubeInformation
       def to_attr_hash
         to_hash
       end
+
+      def get_video_id
+        "#{video_id}"
+      end
     end
   end
 end

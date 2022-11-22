@@ -28,7 +28,7 @@ module YoutubeInformation
         videos = Repository::For.klass(Entity::Video)
           .find_video_ids(session[:watching])
 
-        session[:watching] = videos.map(&:video_id)
+        session[:watching] = videos.map(&:get_video_id)
 
         if videos.none?
           flash.now[:notice] = 'Search a keyword to get started'
@@ -52,8 +52,18 @@ module YoutubeInformation
                              .search(yt_search_keyword, 5)                            
 
             # Add video to database
-            youtube_search.videos.map {|video| Repository::Videos.create(video)}
-            
+            begin
+              youtube_search.videos.map {|video| Repository::Videos.create(video)}
+            rescue StandardError => err
+              logger.error err.backtrace.join("\n")
+              flash[:error] = 'Having trouble accessing the database'
+            end
+
+            # Add new video ids to watched set in cookies
+            youtube_search.videos.map do |video|              
+              session[:watching].insert(0, video.video_id).uniq!
+            end
+
             # Redirect viewer to search page      
             routing.redirect "search/#{yt_search_keyword}"
           end
