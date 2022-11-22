@@ -5,8 +5,8 @@ require 'roda'
 module YoutubeInformation
   # Web App
   class App < Roda
-    plugin :render, views: 'app/views'
-    plugin :assets, css: 'style.css', path: 'app/views/assets'
+    plugin :render, views: 'app/presentation/views_html'
+    plugin :assets, path: 'app/presentation/assets', css: 'style.css'
     plugin :common_logger, $stderr
     plugin :halt
     plugin :flash
@@ -36,7 +36,7 @@ module YoutubeInformation
 
         viewable_videos = Views::VideoList.new(videos)
 
-        view 'home', locals: { viewable_videos: }
+        view 'home', locals: { videos: viewable_videos }
       end
 
       routing.on 'search' do
