@@ -46,21 +46,22 @@ module YoutubeInformation
             yt_search_keyword = routing.params['search_keyword'].downcase
             yt_search_keyword.gsub!(' ', '%20')
             
-            # Get video from Youtube
-            youtube_search = Youtube::SearchMapper
+            # Return 5 video entities
+            searched_videos = Youtube::SearchMapper
                              .new(App.config.ACCESS_TOKEN)
-                             .search(yt_search_keyword, 5)                            
+                             .search(yt_search_keyword, 5)
+                             .videos                            
 
-            # Add video to database
+            # Add unique videos to database
             begin
-              youtube_search.videos.map {|video| Repository::Videos.create(video)}
+              searched_videos.map {|video| Repository::Videos.create(video)}
             rescue StandardError => err
               logger.error err.backtrace.join("\n")
               flash[:error] = 'Having trouble accessing the database'
             end
 
             # Add new video ids to watched set in cookies
-            youtube_search.videos.map do |video|     
+            searched_videos.map do |video|     
               session[:watching].insert(0, video.get_video_id).uniq!
             end
 
@@ -72,9 +73,12 @@ module YoutubeInformation
         routing.on String do |yt_search_keyword|
           # GET /search/keyword    
           routing.get do
-            # Get 5 lastest videos from database
-            videos = Repository::Videos.all.last(5)
-            view 'search', locals: { videos: }
+            # Show the seached videos 
+            searched_videos = Repository::For.klass(Entity::Video)
+            .find_video_ids(session[:watching].first(5))
+
+            viewable_searched_videos = Views::VideoList.new(searched_videos)
+            view 'search', locals: { videos: viewable_searched_videos }
           end
         end        
       end
