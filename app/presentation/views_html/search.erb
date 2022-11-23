@@ -6,7 +6,7 @@
   <div class="row">
     <div class="pt-4">
       <% if videos.any?%>
-      <%  videos.last(5).each do |video| %>
+      <%  videos.each do |video| %>
         <div class="col-sm-12">
           <div class="row mb-3">
             <label class="col-sm-3"}><strong>Video</strong></label>
@@ -27,14 +27,6 @@
           <div class="row mb-3">
             <label class="col-sm-3"><strong>View count</strong></label>
             <div class="col-sm-9"><%= video.view_count %></div>
-          </div>
-          <div class="row mb-3">
-            <label class="col-sm-3"><strong>Like count</strong></label>
-            <div class="col-sm-9"><%= video.like_count %></div>
-          </div>
-          <div class="row mb-3">
-            <label class="col-sm-3"><strong>Comment count</strong></label>
-            <div class="col-sm-9"><%= video.comment_count %></div>
           </div>
         <br/>
         <br/>

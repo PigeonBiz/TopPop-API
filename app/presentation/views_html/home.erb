@@ -18,6 +18,7 @@
       <div class="fs-4 fw-bold mgin">Search record</div> 
       <table>
         <tr>
+          <th></th>
           <th>Video</th>
           <th>Channel title</th>
           <th>Publish date</th>
@@ -25,6 +26,13 @@
         </tr>
         <% videos.each do |video| %>
           <tr>
+            <td>
+              <form method='get' action="/video/<%= video.video_id %>">
+                <button type="submit" class="btn btn-sm btn-link" id="<%= video.video_id %>.delete">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </form>
+            </td>
             <td>
               <a href="https://www.youtube.com/watch?v=<%= video.video_id %>">
                 <%= video.title %>

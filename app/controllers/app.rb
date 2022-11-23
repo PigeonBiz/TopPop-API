@@ -72,12 +72,23 @@ module YoutubeInformation
         routing.on String do |yt_search_keyword|
           # GET /search/keyword    
           routing.get do
-            # Get videos from database
-            videos = Repository::Videos.all
+            # Get 5 lastest videos from database
+            videos = Repository::Videos.all.last(5)
             view 'search', locals: { videos: }
           end
-        end
+        end        
       end
+      
+      routing.on 'video' do
+        routing.on String do |video_id|
+          # DELETE /video/video_id
+          routing.get do
+            session[:watching].delete(video_id)
+  
+            routing.redirect '/'
+          end          
+        end
+      end 
     end
   end
 end
