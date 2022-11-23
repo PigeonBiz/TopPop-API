@@ -1,22 +1,22 @@
 {
   "RSpec": {
     "coverage": {
-      "D:/TopPop_API/require_app.rb": {
+      "/mnt/d/File/SOA/TopPop_API/require_app.rb": {
         "lines": [
           null,
           null,
           null,
           1,
-          6,
+          5,
           1,
           null,
           1,
-          28,
+          24,
           null,
           null
         ]
       },
-      "D:/TopPop_API/config/environment.rb": {
+      "/mnt/d/File/SOA/TopPop_API/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -52,54 +52,13 @@
           null,
           null,
           1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "D:/TopPop_API/app/infrastructure/database/daily_video_orm.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
           1,
           null,
           null,
           null
         ]
       },
-      "D:/TopPop_API/app/infrastructure/database/player_orm.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "D:/TopPop_API/app/infrastructure/database/score_orm.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/infrastructure/database/daily_video_orm.rb": {
         "lines": [
           null,
           null,
@@ -119,7 +78,31 @@
           null
         ]
       },
-      "D:/TopPop_API/app/infrastructure/database/video_orm.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/infrastructure/database/score_orm.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/File/SOA/TopPop_API/app/infrastructure/database/video_orm.rb": {
         "lines": [
           null,
           null,
@@ -140,7 +123,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/infrastructure/game/daily_video.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/infrastructure/game/daily_video.rb": {
         "lines": [
           null,
           null,
@@ -156,7 +139,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/infrastructure/game/game_starter.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/infrastructure/game/game_starter.rb": {
         "lines": [
           null,
           null,
@@ -180,7 +163,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/infrastructure/game/score_counter.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/infrastructure/game/score_counter.rb": {
         "lines": [
           null,
           null,
@@ -211,7 +194,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/infrastructure/youtube/youtube_api.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/infrastructure/youtube/youtube_api.rb": {
         "lines": [
           null,
           null,
@@ -287,7 +270,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/presentation/views_objects/video.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/presentation/views_objects/video.rb": {
         "lines": [
           null,
           null,
@@ -327,7 +310,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/presentation/views_objects/video_list.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/presentation/views_objects/video_list.rb": {
         "lines": [
           null,
           null,
@@ -355,7 +338,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/domain/init.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/init.rb": {
         "lines": [
           null,
           null,
@@ -365,46 +348,19 @@
           null
         ]
       },
-      "D:/TopPop_API/app/domain/players/init.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/players/init.rb": {
         "lines": [
           null,
           null,
           1,
           1,
           3,
-          7,
+          4,
           null,
           null
         ]
       },
-      "D:/TopPop_API/app/domain/players/entities/player.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "D:/TopPop_API/app/domain/players/entities/score.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/players/entities/score.rb": {
         "lines": [
           null,
           null,
@@ -429,12 +385,11 @@
           null
         ]
       },
-      "D:/TopPop_API/app/domain/players/repositories/for.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/players/repositories/for.rb": {
         "lines": [
           null,
           null,
           1,
-          1,
           null,
           1,
           1,
@@ -442,7 +397,6 @@
           1,
           null,
           1,
-          null,
           null,
           null,
           1,
@@ -457,7 +411,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/domain/players/repositories/players.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/players/repositories/scores.rb": {
         "lines": [
           null,
           null,
@@ -475,18 +429,6 @@
           null,
           1,
           0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
           null,
           0,
           null,
@@ -496,120 +438,20 @@
           null,
           null,
           1,
-          1,
+          0,
           0,
           null,
           null,
+          null,
           1,
           0,
-          null,
           null,
           null,
           null,
           null
         ]
       },
-      "D:/TopPop_API/app/domain/players/repositories/scores.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "D:/TopPop_API/app/domain/players/mappers/player_mapper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "D:/TopPop_API/app/domain/players/mappers/score_mapper.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/players/mappers/score_mapper.rb": {
         "lines": [
           null,
           null,
@@ -619,6 +461,7 @@
           null,
           1,
           1,
+          0,
           0,
           0,
           null,
@@ -659,7 +502,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/domain/videos/init.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/videos/init.rb": {
         "lines": [
           null,
           null,
@@ -671,7 +514,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/domain/videos/entities/information.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/videos/entities/information.rb": {
         "lines": [
           null,
           null,
@@ -696,7 +539,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/domain/videos/entities/video.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/videos/entities/video.rb": {
         "lines": [
           null,
           null,
@@ -729,7 +572,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/domain/videos/repositories/for.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/videos/repositories/for.rb": {
         "lines": [
           null,
           null,
@@ -755,7 +598,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/domain/videos/repositories/videos.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/videos/repositories/videos.rb": {
         "lines": [
           null,
           null,
@@ -816,7 +659,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/domain/videos/mappers/search_mapper.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/videos/mappers/search_mapper.rb": {
         "lines": [
           null,
           null,
@@ -882,7 +725,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/domain/videos/mappers/video_mapper.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/domain/videos/mappers/video_mapper.rb": {
         "lines": [
           null,
           null,
@@ -962,7 +805,7 @@
           null
         ]
       },
-      "D:/TopPop_API/app/controllers/app.rb": {
+      "/mnt/d/File/SOA/TopPop_API/app/controllers/app.rb": {
         "lines": [
           null,
           null,
@@ -1065,7 +908,7 @@
           null
         ]
       },
-      "D:/TopPop_API/spec/helpers/vcr_helper.rb": {
+      "/mnt/d/File/SOA/TopPop_API/spec/helpers/vcr_helper.rb": {
         "lines": [
           null,
           null,
@@ -1103,7 +946,7 @@
           null
         ]
       },
-      "D:/TopPop_API/spec/gateway_database_spec.rb": {
+      "/mnt/d/File/SOA/TopPop_API/spec/gateway_database_spec.rb": {
         "lines": [
           null,
           null,
@@ -1129,7 +972,6 @@
           null,
           1,
           1,
-          null,
           null,
           null,
           6,
@@ -1147,7 +989,7 @@
           null
         ]
       },
-      "D:/TopPop_API/spec/helpers/database_helper.rb": {
+      "/mnt/d/File/SOA/TopPop_API/spec/helpers/database_helper.rb": {
         "lines": [
           null,
           null,
@@ -1157,13 +999,13 @@
           null,
           1,
           1,
-          null,
+          1,
           1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1669216078
+    "timestamp": 1669222748
   }
 }

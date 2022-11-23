@@ -24,7 +24,6 @@ describe 'Integration Tests of Youtube API and Database' do
        youtube_search = TopPop::Youtube::SearchMapper
          .new(YOUTUBE_TOKEN)
          .search(SEARCH_KEY_WORD, COUNT)
-         .videos
        rebuilt = youtube_search.videos.map {|video|  TopPop::Repository::Videos.create(video)}
        videos = youtube_search.videos.first
        _(rebuilt.first.video_id).must_equal(videos.video_id)
