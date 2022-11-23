@@ -24,10 +24,6 @@ describe 'Tests Youtube API library' do # rubocop:disable Metrics/BlockLength
       _(yt_results.region_code).must_equal CORRECT['regionCode']
     end
 
-    # it 'HAPPY: project should not have sensitive attributes' do
-    #   _(@project.to_attr_hash.keys & %i[id owner contributors]).must_be_empty
-    # end
-
     it 'SAD: should raise exception on incorrect search path' do
       _(proc do
         TopPop::Youtube::SearchMapper

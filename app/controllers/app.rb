@@ -1,14 +1,20 @@
 # frozen_string_literal: true
 
 require 'roda'
+require 'rack'
 
 module TopPop
   # Web App
   class App < Roda
-    plugin :render, views: 'app/views'
-    plugin :assets, css: 'style.css', path: 'app/views/assets'
+    plugin :render, views: 'app/presentation/views_html'
+    plugin :assets, path: 'app/presentation/assets', css: 'style.css'
     plugin :common_logger, $stderr
     plugin :halt
+    plugin :flash
+    plugin :all_verbs # allows HTTP verbs beyond GET/POST (e.g., DELETE)
+    plugin :common_logger, $stderr
+
+    use Rack::MethodOverride 
 
     route do |routing|
       routing.assets # load CSS
@@ -16,8 +22,22 @@ module TopPop
 
       # GET /
       routing.root do
-        videos = Repository::Videos.all
-        view 'home', locals: { videos: }
+        # Get cookie viewer's previously seen videos
+        session[:watching] ||= []        
+        
+        # Load previously viewed videos
+        videos = Repository::For.klass(Entity::Video)
+          .find_video_ids(session[:watching])
+
+        session[:watching] = videos.map(&:get_video_id)
+
+        if videos.none?
+          flash.now[:notice] = 'Search a keyword to get started'
+        end
+
+        viewable_videos = Views::VideoList.new(videos)
+
+        view 'home', locals: { videos: viewable_videos }
       end
 
       routing.on 'search' do
@@ -27,28 +47,53 @@ module TopPop
             yt_search_keyword = routing.params['search_keyword'].downcase
             yt_search_keyword.gsub!(' ', '%20')
             
-            # Get video from Github
-            youtube_search = Youtube::SearchMapper
+            # Return 5 video entities
+            searched_videos = Youtube::SearchMapper
                              .new(App.config.ACCESS_TOKEN)
-                             .search(yt_search_keyword, 5)                            
+                             .search(yt_search_keyword, 5)
+                             .videos                            
 
-            # Add video to database
-            youtube_search.videos.map {|video| Repository::Videos.create(video)}
-            
+            # Add unique videos to database
+            begin
+              searched_videos.map {|video| Repository::Videos.create(video)}
+            rescue StandardError => err
+              logger.error err.backtrace.join("\n")
+              flash[:error] = 'Having trouble accessing the database'
+            end
+
+            # Add new video ids to watched set in cookies
+            searched_videos.map do |video|     
+              session[:watching].insert(0, video.get_video_id).uniq!
+            end
+
             # Redirect viewer to search page      
             routing.redirect "search/#{yt_search_keyword}"
           end
         end
 
         routing.on String do |yt_search_keyword|
-          # GET /search/keyword
+          # GET /search/keyword    
           routing.get do
-            # Get videos from database
-            videos = Repository::Videos.all
-            view 'search', locals: { videos: }
+            # Show the seached videos 
+            searched_videos = Repository::For.klass(Entity::Video)
+            .find_video_ids(session[:watching].first(5))
+
+            viewable_searched_videos = Views::VideoList.new(searched_videos)
+            view 'search', locals: { videos: viewable_searched_videos }
           end
-        end
+        end        
       end
+      
+      routing.on 'video' do
+        routing.on String do |video_id|
+          # DELETE /video/video_id
+          routing.get do
+            session[:watching].delete(video_id)
+  
+            routing.redirect '/'
+          end          
+        end
+      end 
     end
   end
 end

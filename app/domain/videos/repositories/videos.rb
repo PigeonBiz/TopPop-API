@@ -17,10 +17,14 @@ module TopPop
         rebuild_entity(db_record)
       end
 
+      def self.find_video_ids(video_ids)
+        video_ids.map { |video_id| find_video_id(video_id) }
+      end
+
       def self.create(entity)
         return nil if find(entity)
 
-        db_video = PersistProject.new(entity).create_video
+        db_video = PersistVideo.new(entity).create_video
         rebuild_entity(db_video)
       end
 
@@ -39,7 +43,7 @@ module TopPop
       end
 
       # Helper class to persist videos to database
-      class PersistProject
+      class PersistVideo
         def initialize(entity)
           @entity = entity
         end
