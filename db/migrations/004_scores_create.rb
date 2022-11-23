@@ -6,12 +6,11 @@ Sequel.migration do
   change do
     create_table(:scores) do
       primary_key :id
+      foreign_key :player_id, :players
 
-      Integer     :player_name, null: false
       Integer     :score, null: false
 
-      DateTime :created_time
-      DateTime :updated_time
+      DateTime :created_at
     end
   end
 end

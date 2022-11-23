@@ -9,7 +9,6 @@ module TopPop
     class Video < Dry::Struct
       include Dry.Types
 
-      attribute :id,              Integer.optional
       attribute :video_id,        Strict::String
       attribute :title,           Strict::String
       attribute :publish_date,    Strict::String
