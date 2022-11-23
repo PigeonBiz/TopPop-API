@@ -5,7 +5,7 @@ ruby File.read('.ruby-version').strip
 
 # Configuration and Utilities
 gem 'figaro', '~> 1.2'
-gem 'rake'
+gem 'rake', '~> 13.0'
 
 # Web Application
 gem 'puma', '~> 6'
@@ -36,6 +36,10 @@ group :test do
   gem 'simplecov', '~> 0'
   gem 'vcr', '~> 6'
   gem 'webmock', '~> 3'
+
+  gem 'headless', '~> 2.3'
+  gem 'watir', '~> 7.0'
+  gem 'webdrivers', '~> 5.0'  
 end
 
 # Development
@@ -45,7 +49,7 @@ end
 
 # Production
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 1.2'
 end
 
 # Debugging
