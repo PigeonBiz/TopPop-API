@@ -10,6 +10,12 @@ module YoutubeInformation
         @videos = videos.map { |video| Video.new(video) }
       end
 
+      def each
+        @videos.each do |video|
+          yield video
+        end
+      end
+
       def any?
         @videos.any?
       end

@@ -60,8 +60,8 @@ module YoutubeInformation
             end
 
             # Add new video ids to watched set in cookies
-            youtube_search.videos.map do |video|              
-              session[:watching].insert(0, video.video_id).uniq!
+            youtube_search.videos.map do |video|     
+              session[:watching].insert(0, video.get_video_id).uniq!
             end
 
             # Redirect viewer to search page      
@@ -70,7 +70,7 @@ module YoutubeInformation
         end
 
         routing.on String do |yt_search_keyword|
-          # GET /search/keyword
+          # GET /search/keyword    
           routing.get do
             # Get videos from database
             videos = Repository::Videos.all

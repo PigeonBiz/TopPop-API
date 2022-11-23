@@ -22,8 +22,6 @@
           <th>Channel title</th>
           <th>Publish date</th>
           <th>View count</th>
-          <th>Like count</th>
-          <th>Comment count</th>
         </tr>
         <% videos.each do |video| %>
           <tr>
@@ -35,8 +33,6 @@
             <td><%= video.channel_title %></td>
             <td><%= video.publish_date %></td>
             <td><%= video.view_count %></td>
-            <td><%= video.like_count %></td>
-            <td><%= video.comment_count %></td>
           </tr>
         <% end %>
       </table>

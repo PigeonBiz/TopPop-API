@@ -12,7 +12,7 @@ module YoutubeInformation
         @video
       end
 
-      def id
+      def video_id
         @video.video_id
       end
 
