@@ -20,7 +20,7 @@ module TopPop
       end
 
       def ranking_answer
-        YoutubeInformation::Repository::Videos.ranking
+        TopPop::Repository::Videos.ranking
       end
     end
   end

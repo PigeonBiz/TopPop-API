@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module YoutubeInformation
+module TopPop
   # Provides access to video data
   module Youtube
     # Data Mapper: Youtube search -> Video entity

@@ -5,7 +5,7 @@ require 'dry-struct'
 
 require_relative 'video'
 
-module YoutubeInformation
+module TopPop
   # Model for Information
   module Entity
     class Information < Dry::Struct

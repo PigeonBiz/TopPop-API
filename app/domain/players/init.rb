@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-folders = %w[projects contributions]
+folders = %w[entities repositories mappers]
 folders.each do |folder|
-  require_relative "#{folder}/init"
+  Dir.glob("#{__dir__}/#{folder}/**/*.rb").each do |file|
+    require_relative file
+  end
 end

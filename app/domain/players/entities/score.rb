@@ -3,14 +3,14 @@
 require 'dry-types'
 require 'dry-struct'
 
-module YoutubeInformation
+module TopPop
   # Provides access to video data
   module Entity
     class Score < Dry::Struct
       include Dry.Types
 
       attribute :id,              Integer.optional
-      attribute :player_id,       Strict::Integer
+      attribute :player_name,     Strict::String
       attribute :score,           Strict::Integer
 
       def to_attr_hash

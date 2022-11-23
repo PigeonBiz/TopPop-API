@@ -2,12 +2,16 @@
 
 require 'sequel'
 
-module ScoreInformation
+module TopPop
   # Model for Database
   module Database
     # Object-Relational Mapper for Scores
     class ScoreOrm < Sequel::Model(:scores)
       plugin :timestamps, update_on_create: true
+
+      def self.find_or_create(score_info)
+        first(player_name: score_info[:player_name]) || create(score_info)
+      end
     end
   end
 end

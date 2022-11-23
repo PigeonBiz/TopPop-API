@@ -2,7 +2,7 @@
 
 require_relative 'videos'
 
-module YoutubeInformation
+module TopPop
   module Repository
     # Finds the right repository for an entity object or class
     module For

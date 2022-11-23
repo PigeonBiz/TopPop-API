@@ -5,7 +5,7 @@ module TopPop
     # gameplay needed tools
     class DailyVideos
       def daily_videos
-        YoutubeInformation::Repository::Videos.all
+        TopPop::Repository::Videos.all
       end
     end
   end

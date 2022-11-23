@@ -4,10 +4,10 @@ require 'sequel'
 
 Sequel.migration do
   change do
-    create_table(:players) do
+    create_table(:scores) do
       primary_key :id
 
-      String      :name, unique: true, null: false
+      Integer     :player_name, null: false
       Integer     :score, null: false
 
       DateTime :created_time

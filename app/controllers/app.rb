@@ -2,7 +2,7 @@
 
 require 'roda'
 
-module YoutubeInformation
+module TopPop
   # Web App
   class App < Roda
     plugin :render, views: 'app/views'

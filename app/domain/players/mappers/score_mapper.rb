@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module PlayerInformation
+module TopPop
   # Provides access to score data
   module Player
     # Data Mapper: Player search -> Score entity
     class ScoreMapper
-      def initialize(score, player_id, gateway_class = Player::Api)
+      def initialize(score, player_name, gateway_class = Player::Api)
         @scores_data['score'] = score
-        @scores_data['player_id'] = player_id
+        @scores_data['player_name'] = player_name
         @gateway_class = gateway_class
       end
 
@@ -27,15 +27,15 @@ module PlayerInformation
 
         def build_entity
           Entity::Score.new(
-            player_id:,
+            player_name:,
             score:
           )
         end
 
         private
 
-        def player_id
-          @score_data['player_id']
+        def player_name
+          @score_data['player_name']
         end
 
         def score

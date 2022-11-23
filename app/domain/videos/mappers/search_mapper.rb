@@ -2,7 +2,7 @@
 
 require_relative 'video_mapper'
 
-module YoutubeInformation
+module TopPop
   module Youtube
     class SearchMapper
       def initialize(yt_token, gateway_class = Youtube::Api)

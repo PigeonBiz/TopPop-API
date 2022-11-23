@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module YoutubeInformation
+module TopPop
   module Repository
     # Repository for Video Entities
     class Videos

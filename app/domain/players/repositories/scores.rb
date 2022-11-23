@@ -1,27 +1,15 @@
 # frozen_string_literal: true
 
-module ScoreInformation
+module TopPop
   module Repository
     # Repository for Score Entities
     class Scores
-      def self.all
-        Database::ScoreOrm.all.map { |db_score| rebuild_entity(db_score) }
+      def self.find_id(id)
+        rebuild_entity Database::ScoreOrm.first(id:)
       end
 
-      def self.find(entity)
-        find_score_id(entity.player_name)
-      end
-
-      def self.find_score_id(score_id)
-        db_record = Database::ScoreOrm.first(score_id:)
-        rebuild_entity(db_record)
-      end
-
-      def self.create(entity)
-        return nil if find(entity)
-
-        db_score = PersistProject.new(entity).create_score
-        rebuild_entity(db_score)
+      def self.find_player_name(player_name)
+        rebuild_entity Database::ScoreOrm.all(player_name:)
       end
 
       def self.rebuild_entity(db_record)
@@ -29,20 +17,19 @@ module ScoreInformation
 
         Entity::Score.new(
           id: db_record.id,
-          id: db_record.player_id,
-          name: db_record.score
+          player_name: db_record.player_name,
+          score: db_record.score
         )
       end
 
-      # Helper class to persist scores to database
-      class PersistProject
-        def initialize(entity)
-          @entity = entity
+      def self.rebuild_many(db_records)
+        db_records.map do |db_member|
+          Scores.rebuild_entity(db_member)
         end
+      end
 
-        def create_score
-          Database::ScoreOrm.create(@entity.to_attr_hash)
-        end
+      def self.find_or_create(entity)
+        Database::ScoreOrm.find_or_create(entity.to_attr_hash)
       end
     end
   end

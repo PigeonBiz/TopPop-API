@@ -5,7 +5,7 @@ require 'yaml'
 require 'figaro'
 require 'sequel'
 
-module YoutubeInformation
+module TopPop
   # Configuration for the App
   class App < Roda
     plugin :environments

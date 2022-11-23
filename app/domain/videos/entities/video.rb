@@ -3,7 +3,7 @@
 require 'dry-types'
 require 'dry-struct'
 
-module YoutubeInformation
+module TopPop
   # Provides access to video data
   module Entity
     class Video < Dry::Struct

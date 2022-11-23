@@ -13,7 +13,7 @@ module TopPop
       end
 
       def played_today?(player_name)
-        PlayerInformation::Repository::Scores.find(player_name)
+        TopPop::Repository::Scores.find(player_name)
       end
     end
   end

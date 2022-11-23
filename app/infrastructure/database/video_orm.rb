@@ -2,7 +2,7 @@
 
 require 'sequel'
 
-module YoutubeInformation
+module TopPop
   # Model for Database
   module Database
     # Object-Relational Mapper for Videos

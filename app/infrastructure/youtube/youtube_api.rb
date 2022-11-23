@@ -2,7 +2,7 @@
 
 require 'http'
 
-module YoutubeInformation
+module TopPop
   module Youtube
     # Library for Youtube Web API
     class Api
