@@ -2,11 +2,7 @@
 
 require 'sequel'
 
-<<<<<<< HEAD
 module TopPop
-=======
-module PlayerInformation
->>>>>>> 4e9add10aab64f3ce50bbaf5fe6311dd33ec7b11
   # Model for Database
   module Database
     # Object-Relational Mapper for Scores
