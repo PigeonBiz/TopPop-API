@@ -21,10 +21,10 @@ describe 'Integration Tests of Youtube API and Database' do
     end
 
     it 'HAPPY: should be able to save video from Youtube to database' do
-       youtube_search = YoutubeInformation::Youtube::SearchMapper
+       youtube_search = TopPop::Youtube::SearchMapper
          .new(YOUTUBE_TOKEN)
          .search(SEARCH_KEY_WORD, COUNT)
-       rebuilt = youtube_search.videos.map {|video|  YoutubeInformation::Repository::Videos.create(video)}
+       rebuilt = youtube_search.videos.map {|video|  TopPop::Repository::Videos.create(video)}
        videos = youtube_search.videos.first
        _(rebuilt.first.video_id).must_equal(videos.video_id)
        _(rebuilt.first.channel_title).must_equal(videos.channel_title)

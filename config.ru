@@ -3,4 +3,4 @@
 require_relative 'require_app'
 require_app
 
-run YoutubeInformation::App.freeze.app
+run TopPop::App.freeze.app

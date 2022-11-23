@@ -14,7 +14,7 @@ describe 'Tests Youtube API library' do # rubocop:disable Metrics/BlockLength
 
   describe 'Tests Youtube API search request' do
     it 'HAPPY: should provide correct search informations' do
-      yt_results = YoutubeInformation::Youtube::SearchMapper
+      yt_results = TopPop::Youtube::SearchMapper
                    .new(YOUTUBE_TOKEN)
                    .search(SEARCH_KEY_WORD, COUNT)
 
@@ -24,31 +24,27 @@ describe 'Tests Youtube API library' do # rubocop:disable Metrics/BlockLength
       _(yt_results.region_code).must_equal CORRECT['regionCode']
     end
 
-    # it 'HAPPY: project should not have sensitive attributes' do
-    #   _(@project.to_attr_hash.keys & %i[id owner contributors]).must_be_empty
-    # end
-
     it 'SAD: should raise exception on incorrect search path' do
       _(proc do
-        YoutubeInformation::Youtube::SearchMapper
+        TopPop::Youtube::SearchMapper
           .new(YOUTUBE_TOKEN)
           .search('wrong path', COUNT)
-      end).must_raise YoutubeInformation::Youtube::Api::Response::BadRequest
+      end).must_raise TopPop::Youtube::Api::Response::BadRequest
     end
 
     it 'SAD: should raise exception when unauthorized' do
       _(proc do
-        YoutubeInformation::Youtube::SearchMapper
+        TopPop::Youtube::SearchMapper
           .new('BAD_TOKEN')
           .search(SEARCH_KEY_WORD, COUNT)
-      end).must_raise YoutubeInformation::Youtube::Api::Response::BadRequest
+      end).must_raise TopPop::Youtube::Api::Response::BadRequest
     end
   end
 
   describe 'Tests Youtube API videos information' do
     describe 'Video information' do
       before do
-        @video = YoutubeInformation::Youtube::SearchMapper
+        @video = TopPop::Youtube::SearchMapper
                  .new(YOUTUBE_TOKEN)
                  .search(SEARCH_KEY_WORD, COUNT)
       end

@@ -36,13 +36,21 @@ task :rerun do
   sh "rerun -c --ignore 'coverage/*' -- bundle exec puma"
 end
 
+desc 'Generates a 64 by secret for Rack::Session'
+task :new_session_secret do
+  require 'base64'
+  require 'SecureRandom'
+  secret = SecureRandom.random_bytes(64).then { Base64.urlsafe_encode64(_1) }
+  puts "SESSION_SECRET: #{secret}"
+end
+
 namespace :db do
   task :config do
     require 'sequel'
     require_relative 'config/environment' # load config info
     require_relative 'spec/helpers/database_helper'
 
-    def app = YoutubeInformation::App
+    def app = TopPop::App
   end
 
   desc 'Run migrations'
@@ -70,8 +78,8 @@ namespace :db do
       return
     end
 
-    FileUtils.rm(YoutubeInformation::App.config.DB_FILENAME)
-    puts "Deleted #{YoutubeInformation::App.config.DB_FILENAME}"
+    FileUtils.rm(TopPop::App.config.DB_FILENAME)
+    puts "Deleted #{TopPop::App.config.DB_FILENAME}"
   end
 end
 
