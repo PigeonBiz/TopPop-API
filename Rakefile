@@ -42,7 +42,7 @@ namespace :db do
     require_relative 'config/environment' # load config info
     require_relative 'spec/helpers/database_helper'
 
-    def app = YoutubeInformation::App
+    def app = TopPop::App
   end
 
   desc 'Run migrations'
@@ -70,8 +70,8 @@ namespace :db do
       return
     end
 
-    FileUtils.rm(YoutubeInformation::App.config.DB_FILENAME)
-    puts "Deleted #{YoutubeInformation::App.config.DB_FILENAME}"
+    FileUtils.rm(TopPop::App.config.DB_FILENAME)
+    puts "Deleted #{TopPop::App.config.DB_FILENAME}"
   end
 end
 

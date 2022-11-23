@@ -11,8 +11,8 @@ Sequel.migration do
       String      :title
       String      :publish_date
       String      :channel_title
-      Integer     :view_count, null: false
-      Integer     :like_count
+      Bigint      :view_count, null: false
+      Bigint      :like_count
       Integer     :comment_count
 
       DateTime  :created_time
