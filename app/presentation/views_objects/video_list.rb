@@ -2,7 +2,7 @@
 
 require_relative 'video'
 
-module YoutubeInformation
+module TopPop
   module Views
     # View for a list of video entities
     class VideoList

@@ -8,7 +8,7 @@ module TopPop
     # Object-Relational Mapper for Videos
     class VideoOrm < Sequel::Model(:videos)
       one_to_one  :daily_video,
-                  class: :'YoutubeInformation::Database::DailyVideoOrm',
+                  class: :'TopPop::Database::DailyVideoOrm',
                   key: :vid_id
 
       plugin :timestamps, update_on_create: true
