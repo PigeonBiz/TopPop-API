@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module YoutubeInformation
+module TopPop
   module Views
     # View for a single video entity
     class Video
