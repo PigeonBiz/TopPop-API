@@ -6,7 +6,7 @@ Sequel.migration do
   change do
     create_table(:daily_videos) do
       primary_key :id
-      String      :vid_id, :videos
+      foreign_key :vid_id, :videos
       Integer     :ranking, null: false
 
       DateTime  :created_at
