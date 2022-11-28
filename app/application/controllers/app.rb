@@ -20,28 +20,58 @@ module TopPop
       routing.assets # load CSS
       response['Content-Type'] = 'text/html; charset=utf-8'
 
-      # GET /
       routing.root do
-        # Get cookie viewer's previously seen videos
-        session[:watching] ||= []        
-        
-        # Load previously viewed videos
-        videos = Repository::For.klass(Entity::Video)
-          .find_video_ids(session[:watching])
+        # GET /
+        view 'home'
+      end
 
-        session[:watching] = videos.map(&:get_video_id)
+      routing.on 'player' do
+        routing.is do
+          # POST /player
+          routing.post do
+            player_name_monad = Forms::PlayerName.new.call(routing.params)
 
-        if videos.none?
-          flash.now[:notice] = 'Search a keyword to get started'
-        end
+            if player_name_monad.errors
+              flash[:error] = "#{player_name_monad.errors.messages.first}"
+              routing.redirect '/'
+            end
 
-        viewable_videos = Views::VideoList.new(videos)
+            # session[:player_name] = player_name_monad.success
+            flash[:notice] = 'Your name is recorded'
+            # routing.redirect "game"
+          end
+        end      
+      end
 
-        view 'home', locals: { videos: viewable_videos }
+      routing.on 'game' do
+        routing.is do
+          # GET /game
+          view 'game'
+        end      
       end
 
       routing.on 'search' do
         routing.is do
+          # GET /search/
+          routing.get do
+            # Get cookie viewer's previously seen videos
+            session[:watching] ||= []        
+            
+            # Load previously viewed videos
+            videos = Repository::For.klass(Entity::Video)
+              .find_video_ids(session[:watching])
+      
+            session[:watching] = videos.map(&:get_video_id)
+      
+            if videos.none?
+              flash.now[:notice] = 'Search a keyword to get started'
+            end
+      
+            viewable_videos = Views::VideoList.new(videos)
+      
+            view 'search', locals: { videos: viewable_videos }
+          end
+
           # POST /search/
           routing.post do
             yt_search_keyword = routing.params['search_keyword'].downcase
@@ -79,7 +109,7 @@ module TopPop
             .find_video_ids(session[:watching].first(5))
 
             viewable_searched_videos = Views::VideoList.new(searched_videos)
-            view 'search', locals: { videos: viewable_searched_videos }
+            view 'searched_videos', locals: { videos: viewable_searched_videos }
           end
         end        
       end

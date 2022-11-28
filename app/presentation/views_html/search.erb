@@ -1,37 +1,49 @@
-<div class="container px-lg-5">
-  <div class="row">
-    <h2 class="fs-4 fw-bold mgin">Search results:</h2>
-  </div>
+<div class="container px-lg-5 main">
+  <form action="/search" id="search-form" method="POST" role="form">
+    <div class="row vertical-align query-bar">
+      <div class="col-md-2 col-sm-3">
+        <div class="fs-4 fw-bold">Search video</div>
+      </div>
+      <div class="col-md-8 col-sm-6">
+        <input class="form-control" id="search_input" name="search_keyword" type="text" />
+      </div>
+      <div class="col-md-2 col-sm-3">
+        <button class="submit btn btn-lg btn-primary" id="search-form-submit" type="submit" value="submit">Get videos</button>
+      </div>
+    </div>
+  </form>
 
-  <div class="row">
-    <div class="pt-4">
-      <% if videos.any?%>
-      <%  videos.each do |video| %>
-        <div class="col-sm-12">
-          <div class="row mb-3">
-            <label class="col-sm-3"}><strong>Video</strong></label>
-            <div class="col-sm-9">
+  <div>
+    <% if videos.any? %>
+      <div class="fs-4 fw-bold mgin">Search record</div> 
+      <table>
+        <tr>
+          <th></th>
+          <th>Video</th>
+          <th>Channel title</th>
+          <th>Publish date</th>
+          <th>View count</th>
+        </tr>
+        <% videos.each do |video| %>
+          <tr>
+            <td>
+              <form method='get' action="/video/<%= video.video_id %>">
+                <button type="submit" class="btn btn-sm btn-link" id="<%= video.video_id %>.delete">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </form>
+            </td>
+            <td>
               <a href="https://www.youtube.com/watch?v=<%= video.video_id %>">
                 <%= video.title %>
-              </a>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <label class="col-sm-3"><strong>Channel</strong></label>
-            <div class="col-sm-9"><%= video.channel_title %></div>
-          </div>
-          <div class="row mb-3">
-            <label class="col-sm-3"><strong>Publish date</strong></label>
-            <div class="col-sm-9"><%= video.publish_date %></div>
-          </div>
-          <div class="row mb-3">
-            <label class="col-sm-3"><strong>View count</strong></label>
-            <div class="col-sm-9"><%= video.view_count %></div>
-          </div>
-        <br/>
-        <br/>
-      <% end %>
-    </div>
+              </a>          
+            </td>
+            <td><%= video.channel_title %></td>
+            <td><%= video.publish_date %></td>
+            <td><%= video.view_count %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
   </div>
-<% end %>
 </div>
