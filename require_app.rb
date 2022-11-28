@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Requires all ruby files in specified app folders
-def require_app(folders = %w[infrastructure presentation domain controllers])
+def require_app(folders = %w[application domain infrastructure presentation])
   app_list = Array(folders).map { |folder| "app/#{folder}" }
   full_list = ['config', app_list].flatten.join(',')
 
