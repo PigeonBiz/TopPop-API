@@ -7,16 +7,24 @@ ruby File.read('.ruby-version').strip
 gem 'figaro', '~> 1.2'
 gem 'rake', '~> 13.0'
 
+# APPLICATION LAYER
 # Web Application
 gem 'puma', '~> 6'
 gem 'roda', '~> 3'
 gem 'rack-session', '~> 0.3'
 gem 'tilt'
 
+# Controllers and services
+gem 'dry-monads', '~> 1.4'
+gem 'dry-transaction', '~> 0.13'
+gem 'dry-validation', '~> 1.7'
+
+# DOMAIN LAYER
 # Validation
 gem 'dry-struct', '~> 1'
 gem 'dry-types', '~> 1'
 
+# INFRASTRUCTURE LAYER
 # Networking
 gem 'http', '~> 5'
 
@@ -29,7 +37,7 @@ group :development, :test do
   gem 'sqlite3', '~> 1.4'
 end
 
-# Testing
+# TESTING
 group :test do
   gem 'minitest', '~> 5'
   gem 'minitest-rg', '~> 5'
@@ -52,10 +60,10 @@ group :production do
   gem 'pg', '~> 1.2'
 end
 
-# Debugging
+# DEBUGGING
 gem 'pry'
 
-# Code Quality
+# QUALITY
 group :development do
   gem 'flog'
   gem 'reek'
