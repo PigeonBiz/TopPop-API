@@ -8,9 +8,9 @@ module TopPop
     class SearchScore
       include Dry::Monads::Result::Mixin
 
-      def call(player_name)
-        projects = Repository::For.klass(Entity::score)
-          .find_player_score(Player_name)
+      def call(_player_name)
+        projects = Repository::For.klass(Entity.score)
+                                  .find_player_score(Player_name)
 
         Success(projects)
       rescue StandardError

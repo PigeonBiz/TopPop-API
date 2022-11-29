@@ -17,6 +17,15 @@ module TopPop
         rebuild_entity(db_player_score)
       end
 
+      def self.find_player_last_playdate(player_name)
+        db_player_score = Database::ScoreOrm
+          .graph(:player_name, :score, :created_at)
+          .where(player_name: player_name)
+          .last
+
+        rebuild_entity(db_player_score)
+      end
+
       def self.rebuild_entity(db_record)
         return nil unless db_record
 
