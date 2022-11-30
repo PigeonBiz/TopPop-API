@@ -39,6 +39,7 @@ module TopPop
 
         def video_id
           @video_entity.video_id
+        end
 
         def title
           @video_entity.title
@@ -82,7 +83,7 @@ module TopPop
 
         Entity::DailyVideo.new(
           db_record.to_hash.merge(
-            original_video: Videos.rebuild_entity(db_record)
+            original_video: Videos.rebuild_entity(db_record),
             ranking: db_record.ranking
           )
         )

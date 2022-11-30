@@ -3,16 +3,16 @@
 source 'https://rubygems.org'
 ruby File.read('.ruby-version').strip
 
-# Configuration and Utilities
+# CONFIGURATION
 gem 'figaro', '~> 1.2'
 gem 'rake', '~> 13.0'
 
 # APPLICATION LAYER
-# Web Application
-gem 'puma', '~> 6'
-gem 'roda', '~> 3'
+# Web application related
+gem 'puma', '~> 6.0'
 gem 'rack-session', '~> 0.3'
-gem 'tilt'
+gem 'roda', '~> 3.62'
+gem 'tilt', '~> 2.0'
 
 # Controllers and services
 gem 'dry-monads', '~> 1.4'
@@ -37,27 +37,26 @@ group :development, :test do
   gem 'sqlite3', '~> 1.4'
 end
 
+group :production do
+  gem 'pg', '~> 1.2'
+end
+
 # TESTING
 group :test do
   gem 'minitest', '~> 5'
   gem 'minitest-rg', '~> 5'
   gem 'simplecov', '~> 0'
-  gem 'vcr', '~> 6'
-  gem 'webmock', '~> 3'
+  gem 'vcr', '~> 6.0'
+  gem 'webmock', '~> 3.0'
 
   gem 'headless', '~> 2.3'
+  gem 'page-object', '~> 2.3'
   gem 'watir', '~> 7.0'
-  gem 'webdrivers', '~> 5.0'  
+  gem 'webdrivers', '~> 5.0'
 end
 
-# Development
 group :development do
   gem 'rerun', '~> 0'
-end
-
-# Production
-group :production do
-  gem 'pg', '~> 1.2'
 end
 
 # DEBUGGING
