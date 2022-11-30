@@ -21,7 +21,7 @@ describe 'Integration tests of daily videos' do
     end
 
     it 'HAPPY: should be able to save 5 videos from Youtube to database' do
-
+      # We haven't finish the game's features that use the services, so we cannot test the services now. 
     end
   end
 end

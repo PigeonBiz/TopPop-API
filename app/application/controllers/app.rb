@@ -25,21 +25,26 @@ module TopPop
         view 'home'
       end
 
+      # Virtual route to verify and save player's input 
       routing.on 'player' do
         routing.is do
           # POST /player
           routing.post do
             # Get player name
             player_name_monad = Forms::PlayerName.new.call(routing.params)
+            input_verified = Service::VerifyInput.new.call(player_name_monad)
 
-            if player_name_monad.errors
-              flash[:error] = "#{player_name_monad.errors.messages.first}"
+            if input_verified.failure?
+              flash[:error] = input_verified.failure
               routing.redirect '/'
             end
 
             # Save player name into cookie
-            session[:player_name] = player_name_monad.success
-            flash[:notice] = 'Your name is recorded'
+            player_name = player_name_monad.to_h[:player_name]
+            session[:player_name] = player_name
+
+            flash[:notice] = "Hi #{player_name}! Welcome to TopPop!"
+
             routing.redirect "game"
           end
         end      

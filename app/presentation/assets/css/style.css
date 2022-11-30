@@ -28,6 +28,11 @@ input[type=text] {
   margin-bottom: 1rem;
 }
 
+.mgin11 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
