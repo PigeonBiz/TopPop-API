@@ -29,6 +29,7 @@ module TopPop
         routing.is do
           # POST /player
           routing.post do
+            # Get player name
             player_name_monad = Forms::PlayerName.new.call(routing.params)
 
             if player_name_monad.errors
@@ -36,9 +37,10 @@ module TopPop
               routing.redirect '/'
             end
 
-            # session[:player_name] = player_name_monad.success
+            # Save player name into cookie
+            session[:player_name] = player_name_monad.success
             flash[:notice] = 'Your name is recorded'
-            # routing.redirect "game"
+            routing.redirect "game"
           end
         end      
       end

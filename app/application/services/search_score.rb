@@ -10,7 +10,7 @@ module TopPop
 
       def call(_player_name)
         projects = Repository::For.klass(Entity.score)
-                                  .find_player_score(Player_name)
+                                  .find_player_score(player_name)
 
         Success(projects)
       rescue StandardError
