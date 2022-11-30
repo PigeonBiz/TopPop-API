@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'videos'
+require_relative 'daily_videos'
 
 module TopPop
   module Repository
@@ -8,6 +9,7 @@ module TopPop
     module For
       ENTITY_REPOSITORY = {
         Entity::Video => Videos,
+        Entity::DailyVideo => DailyVideos
       }.freeze
 
       def self.klass(entity_klass)

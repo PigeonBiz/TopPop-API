@@ -20,7 +20,7 @@ module TopPop
       end
 
       def ranking_answer
-        TopPop::Repository::Videos.ranking
+        Repository::For.klass(Entity::video).ranking
       end
     end
   end
