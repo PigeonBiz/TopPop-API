@@ -7,41 +7,32 @@ task :default do
   puts `rake -T`
 end
 
-desc 'setup hidden files'
-task :setup do
-  sh 'touch config/secrets.yml'
-end
-
-desc 'search new for once'
-task :searchnew do
-  sh 'ruby spec/fixtures/search_info.rb'
-end
-
-desc 'Run tests once'
+desc 'Run unit and integration tests'
 Rake::TestTask.new(:spec) do |t|
-  t.pattern = 'spec/*_spec.rb'
+  t.pattern = 'spec/tests/**/*_spec.rb'
   t.warning = false
 end
 
-desc 'Keep rerunning tests upon changes'
+desc 'Keep rerunning unit/integration tests upon changes'
 task :respec do
-  sh "rerun -c 'rake spec' --ignore 'coverage/*'"
+  sh "rerun -c 'rake spec' --ignore 'coverage/*' --ignore 'repostore/*'"
 end
 
-task :run do
-  sh 'bundle exec puma'
-end
-
+desc 'Run the webserver and application and restart if code changes'
 task :rerun do
-  sh "rerun -c --ignore 'coverage/*' -- bundle exec puma"
+  sh "rerun -c --ignore 'coverage/*' --ignore 'repostore/*' -- bundle exec puma"
 end
 
-desc 'Generates a 64 by secret for Rack::Session'
-task :new_session_secret do
-  require 'base64'
-  require 'SecureRandom'
-  secret = SecureRandom.random_bytes(64).then { Base64.urlsafe_encode64(_1) }
-  puts "SESSION_SECRET: #{secret}"
+namespace :run do
+  desc 'Run API in dev mode'
+  task :dev do
+    sh 'rerun -c "bundle exec puma -p 9090"'
+  end
+
+  desc 'Run API in test mode'
+  task :test do
+    sh 'RACK_ENV=test bundle exec puma -p 9090'
+  end
 end
 
 namespace :db do
@@ -50,7 +41,7 @@ namespace :db do
     require_relative 'config/environment' # load config info
     require_relative 'spec/helpers/database_helper'
 
-    def app = TopPop::App
+    def app = CodePraise::App
   end
 
   desc 'Run migrations'
@@ -68,6 +59,7 @@ namespace :db do
     end
 
     require_app('infrastructure')
+    require_relative 'spec/helpers/database_helper'
     DatabaseHelper.wipe_database
   end
 
@@ -78,8 +70,32 @@ namespace :db do
       return
     end
 
-    FileUtils.rm(TopPop::App.config.DB_FILENAME)
-    puts "Deleted #{TopPop::App.config.DB_FILENAME}"
+    FileUtils.rm(app.config.DB_FILENAME)
+    puts "Deleted #{app.config.DB_FILENAME}"
+  end
+end
+
+namespace :repos do
+  task :config do
+    require_relative 'config/environment' # load config info
+    def app = CodePraise::App
+  end
+
+  desc 'Create director for repo store'
+  task :create => :config do
+    puts `mkdir #{app.config.REPOSTORE_PATH}`
+  end
+
+  desc 'Delete cloned repos in repo store'
+  task :wipe => :config do
+    sh "rm -rf #{app.config.REPOSTORE_PATH}/*" do |ok, _|
+      puts(ok ? 'Cloned repos deleted' : 'Could not delete cloned repos')
+    end
+  end
+
+  desc 'List cloned repos in repo store'
+  task :list => :config do
+    puts `ls #{app.config.REPOSTORE_PATH}`
   end
 end
 
@@ -87,7 +103,6 @@ desc 'Run application console'
 task :console do
   sh 'pry -r ./load_all'
 end
-
 
 namespace :vcr do
   desc 'delete cassette fixtures'
@@ -102,7 +117,7 @@ namespace :quality do
   only_app = 'config/ app/'
 
   desc 'run all static-analysis quality checks'
-  task all: %i[rubocop flog reek]
+  task all: %i[rubocop reek flog]
 
   desc 'code style linter'
   task :rubocop do
@@ -111,7 +126,7 @@ namespace :quality do
 
   desc 'code smell detector'
   task :reek do
-    sh 'reek'
+    sh "reek #{only_app}"
   end
 
   desc 'complexiy analysis'
