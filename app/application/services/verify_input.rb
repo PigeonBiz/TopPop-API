@@ -5,14 +5,14 @@ require 'dry/transaction'
 module TopPop
   module Service
     # Start to play game
-    class VerifyInput
+    class VerifyPlayer
       include Dry::Transaction
 
-      step :verify_input
+      step :verify_player
 
       private
 
-      def verify_input(player_name)
+      def verify_player(player_name)
         if player_name.success?
           Success(player_name)
         else

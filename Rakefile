@@ -26,12 +26,12 @@ end
 namespace :run do
   desc 'Run API in dev mode'
   task :dev do
-    sh 'rerun -c "bundle exec puma -p 9090"'
+    sh 'rerun -c "bundle exec puma -p 9009"'
   end
 
   desc 'Run API in test mode'
   task :test do
-    sh 'RACK_ENV=test bundle exec puma -p 9090'
+    sh 'RACK_ENV=test bundle exec puma -p 9009'
   end
 end
 
@@ -41,7 +41,7 @@ namespace :db do
     require_relative 'config/environment' # load config info
     require_relative 'spec/helpers/database_helper'
 
-    def app = CodePraise::App
+    def app = TopPop::App
   end
 
   desc 'Run migrations'
@@ -78,7 +78,7 @@ end
 namespace :repos do
   task :config do
     require_relative 'config/environment' # load config info
-    def app = CodePraise::App
+    def app = TopPop::App
   end
 
   desc 'Create director for repo store'
