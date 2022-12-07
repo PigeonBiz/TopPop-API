@@ -8,6 +8,8 @@ module TopPop
     # Represents a CreditShare value
     class Video < Roar::Decorator
       include Roar::JSON
+      include Roar::Hypermedia
+      include Roar::Decorator::HypermediaConsumer
 
       property :video_id
       property :title
@@ -15,8 +17,15 @@ module TopPop
       property :channel_title
       property :view_count
 
-      property :to_attr_hash
-      property :get_video_id
+      link :self do
+        "#{App.config.API_HOST}/api/v1/videos/#{video_id}"
+      end
+
+      private
+
+      def video_id
+        represented.video_id
+      end
     end
   end
 end
