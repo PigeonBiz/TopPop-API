@@ -5,8 +5,7 @@ require 'dry-validation'
 module TopPop
   module Forms
     class PlayerName < Dry::Validation::Contract
-      # REGEX = %r{.*}.freeze # invalid all the time
-      REGEX = %r{^\w+\w$}.freeze # invalid all the time
+      REGEX = %r{^\w+\w$}.freeze 
 
       params do
         required(:player_name).filled(:string)

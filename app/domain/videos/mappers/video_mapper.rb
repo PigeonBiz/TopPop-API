@@ -35,9 +35,7 @@ module TopPop
             title:,
             publish_date:,
             channel_title:,
-            view_count:,
-            like_count:,
-            comment_count:
+            view_count:
           )
         end
 
@@ -61,14 +59,6 @@ module TopPop
 
         def view_count
           @video_data['statistics']['viewCount'].to_i
-        end
-
-        def like_count
-          @video_data['statistics']['likeCount'].to_i
-        end
-
-        def comment_count
-          @video_data['statistics']['commentCount'].to_i
         end
       end
     end

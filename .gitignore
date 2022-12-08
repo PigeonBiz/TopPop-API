@@ -4,3 +4,4 @@ coverage/*
 _snippets/
 *.db
 .bundle/
+stty.exe.stackdump

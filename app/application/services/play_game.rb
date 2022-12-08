@@ -8,20 +8,11 @@ module TopPop
     class PlayGame
       include Dry::Transaction
 
-      # step :verify_input
       step :get_last_play_date
       step :play_today?
       step :get_daily_videos
 
       private
-
-      # def verify_input(player_name)
-      #   if player_name.success?
-      #     Success(player_name)
-      #   else
-      #     Failure("#{player_name.errors.messages.first}")
-      #   end
-      # end
 
       def get_last_play_date(player_name)
         db_player_data = Repository::For.klass(Entity.score)
