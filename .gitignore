@@ -2,5 +2,4 @@ config/secrets.yml
 coverage/*
 !coverage/.resultset.json
 _snippets/
-*.db
 .bundle/
