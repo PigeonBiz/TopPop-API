@@ -15,12 +15,12 @@ end
 
 desc 'Keep rerunning unit/integration tests upon changes'
 task :respec do
-  sh "rerun -c 'rake spec' --ignore 'coverage/*' --ignore 'repostore/*'"
+  sh "rerun -c 'rake spec' --ignore 'coverage/*'"
 end
 
 desc 'Run the webserver and application and restart if code changes'
 task :rerun do
-  sh "rerun -c --ignore 'coverage/*' --ignore 'repostore/*' -- bundle exec puma"
+  sh "rerun -c --ignore 'coverage/*' -- bundle exec puma"
 end
 
 namespace :run do
@@ -31,7 +31,7 @@ namespace :run do
 
   desc 'Run API in test mode'
   task :test do
-    sh 'RACK_ENV=test bundle exec puma -p 9009'
+    sh 'rerun -c "bundle exec puma -p 9009"'
   end
 end
 
