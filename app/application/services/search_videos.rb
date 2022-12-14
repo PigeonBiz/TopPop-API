@@ -13,8 +13,8 @@ module TopPop
 
       private
 
-      API_ERR_MSG = 'Having trouble accessing the youtube API'
-      LIST_ERR_MSG = 'Having trouble creating video list'
+      GET_ERR_MSG = 'Having trouble accessing the youtube API'
+      PARSE_ERR_MSG = 'Having trouble creating video list'
 
       def get_youtube_videos(search_keyword)
         result_videos = Youtube::SearchMapper
@@ -24,7 +24,7 @@ module TopPop
         Success(result_videos)
       rescue StandardError
         Failure(
-          Response::ApiResult.new(status: :internal_error, message: API_ERR_MSG)
+          Response::ApiResult.new(status: :internal_error, message: GET_ERR_MSG)
         )
       end
 
@@ -33,6 +33,7 @@ module TopPop
         Success(Response::ApiResult.new(status: :ok, message: video_list))
       rescue StandardError => e
         puts e.backtrace.join("\n")
+<<<<<<< HEAD
         Failure(Response::ApiResult.new(status: :internal_error, message: LIST_ERR_MSG))
 =======
       step :verify_input
@@ -66,6 +67,9 @@ module TopPop
       rescue StandardError
         Failure('Error in parsing videos; please try again later')
 >>>>>>> a2440d7d58116bd0838227d3a9b072554878a1ad
+=======
+        Failure(Response::ApiResult.new(status: :internal_error, message: PARSE_ERR_MSG))
+>>>>>>> 5d0f626fbf32d631e1eb6300bc78219b54848dfc
       end
     end
   end

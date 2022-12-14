@@ -31,8 +31,6 @@ describe 'Integration Tests of Youtube API and Database' do
       _(rebuilt.first.title).must_equal(videos.title)
       _(rebuilt.first.publish_date).must_equal(videos.publish_date)
       _(rebuilt.first.view_count).must_equal(videos.view_count)
-      _(rebuilt.first.like_count).must_equal(videos.like_count)
-      _(rebuilt.first.comment_count).must_equal(videos.comment_count)
     end
   end
 end

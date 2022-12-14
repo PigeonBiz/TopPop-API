@@ -18,11 +18,9 @@ task :respec do
   sh "rerun -c 'rake spec' --ignore 'coverage/*'"
 end
 
-# NOTE: run `rake run:test` in another process
-desc 'Run acceptance tests only'
-Rake::TestTask.new(:spec_accept) do |t|
-  t.pattern = 'spec/tests/acceptance/*_spec.rb'
-  t.warning = false
+desc 'Run the webserver and application and restart if code changes'
+task :rerun do
+  sh "rerun -c --ignore 'coverage/*' -- bundle exec puma"
 end
 
 namespace :run do
@@ -33,7 +31,7 @@ namespace :run do
 
   desc 'Run API in test mode'
   task :test do
-    sh 'RACK_ENV=test bundle exec puma -p 9009'
+    sh 'rerun -c "bundle exec puma -p 9009"'
   end
 end
 
