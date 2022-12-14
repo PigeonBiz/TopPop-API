@@ -59,78 +59,46 @@ module TopPop
 
       routing.on 'search' do
         routing.is do
-          # GET /search/
+          # GET /search
           routing.get do
-            # Get cookie viewer's previously seen videos
-            session[:watching] ||= []        
-            
-            # Load previously viewed videos
-            videos = Repository::For.klass(Entity::Video)
-              .find_video_ids(session[:watching])
-      
-            session[:watching] = videos.map(&:get_video_id)
-      
-            if videos.none?
-              flash.now[:notice] = 'Search a keyword to get started'
+            get_all_videos = Service::AllVideos.new.call()
+
+            if get_all_videos.failure?
+              flash[:error] = get_all_videos.failure
+              routing.redirect '/'
             end
-      
-            viewable_videos = Views::VideoList.new(videos)
-      
+
+            all_videos = get_all_videos.value!.videos
+            viewable_videos = Views::VideoList.new(all_videos)      
             view 'search', locals: { videos: viewable_videos }
           end
 
-          # POST /search/
+          # POST /search
           routing.post do
-            yt_search_keyword = routing.params['search_keyword'].downcase
-            yt_search_keyword.gsub!(' ', '%20')
+            search_keyword = routing.params['search_keyword']
             
-            # Return 5 video entities
-            searched_videos = Youtube::SearchMapper
-                             .new(App.config.ACCESS_TOKEN)
-                             .search(yt_search_keyword, 5)
-                             .videos                            
-
-            # Add unique videos to database
-            begin
-              searched_videos.map {|video| Repository::Videos.create(video)}
-            rescue StandardError => err
-              logger.error err.backtrace.join("\n")
-              flash[:error] = 'Having trouble accessing the database'
-            end
-
-            # Add new video ids to watched set in cookies
-            searched_videos.map do |video|     
-              session[:watching].insert(0, video.get_video_id).uniq!
-            end
-
-            # Redirect viewer to search page      
-            routing.redirect "search/#{yt_search_keyword}"
+            # Redirect viewer to search result page      
+            routing.redirect "search/#{search_keyword}"
           end
         end
+        
+        routing.on String do |search_keyword|
+          # GET /search/{search_keyword}
+          routing.get do    
+            search_keyword_monad = Forms::SearchKeyword.new.call({:search_keyword => search_keyword})
+            search_result = Service::SearchVideos.new.call(search_keyword_monad)
+    
+            if search_result.failure?
+              flash[:error] = search_result.failure
+              routing.redirect '/search'
+            end
 
-        routing.on String do |yt_search_keyword|
-          # GET /search/keyword    
-          routing.get do
-            # Show the seached videos 
-            searched_videos = Repository::For.klass(Entity::Video)
-            .find_video_ids(session[:watching].first(5))
-
+            searched_videos = search_result.value!.videos
             viewable_searched_videos = Views::VideoList.new(searched_videos)
             view 'searched_videos', locals: { videos: viewable_searched_videos }
           end
         end        
       end
-      
-      routing.on 'video' do
-        routing.on String do |video_id|
-          # DELETE /video/video_id
-          routing.get do
-            session[:watching].delete(video_id)
-  
-            routing.redirect '/'
-          end          
-        end
-      end 
     end
   end
 end
