@@ -4,22 +4,19 @@ require 'dry/transaction'
 
 module TopPop
   module Service
-    class SearchVideos
+    class AllVideos
       include Dry::Transaction
 
-      step :get_youtube_videos
+      step :get_all_videos
       step :create_video_list
 
       private
 
-      GET_ERR_MSG = 'Having trouble accessing the youtube API'
+      GET_ERR_MSG = 'Having trouble getting all db videos'
       PARSE_ERR_MSG = 'Having trouble creating video list'
 
-      def get_youtube_videos(search_keyword)
-        result_videos = Youtube::SearchMapper
-                          .new(App.config.ACCESS_TOKEN)
-                          .search(search_keyword, 10)
-                          .videos  
+      def get_all_videos()
+        result_videos = Repository::Videos.all
         Success(result_videos)
       rescue StandardError
         Failure(

@@ -29,21 +29,40 @@ module TopPop
 
       routing.on 'api/v1' do
         routing.on 'search' do
-          routing.on String do |search_keyword|
-            # GET /search/search_keyword
+          routing.is do
+            # GET /search
             routing.get do
-              result = Service::SearchVideos.new.call(search_keyword)
+              get_all_video = Service::AllVideos.new.call()
 
-              if result.failure?
-                failed = Representer::HttpResponse.new(result.failure)
+              if get_all_video.failure?
+                failed = Representer::HttpResponse.new(get_all_video.failure)
                 routing.halt failed.http_status_code, failed.to_json
               end
 
-              http_response = Representer::HttpResponse.new(result.value!)
+              http_response = Representer::HttpResponse.new(get_all_video.value!)
               response.status = http_response.http_status_code
 
               Representer::Videos.new(
-                result.value!.message
+                get_all_video.value!.message
+              ).to_json              
+            end
+          end
+
+          routing.on String do |search_keyword|
+            # GET /search/search_keyword
+            routing.get do
+              search_result = Service::SearchVideos.new.call(search_keyword)
+
+              if search_result.failure?
+                failed = Representer::HttpResponse.new(search_result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(search_result.value!)
+              response.status = http_response.http_status_code
+
+              Representer::Videos.new(
+                search_result.value!.message
               ).to_json
             end
           end    
