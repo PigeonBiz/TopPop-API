@@ -5,3 +5,5 @@ _snippets/
 *.db
 .bundle/
 stty.exe.stackdump
+_snippets/
+_cache/
