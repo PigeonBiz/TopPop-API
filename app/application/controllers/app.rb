@@ -7,6 +7,7 @@ module TopPop
   # Web App
   class App < Roda
     plugin :halt
+    plugin :caching
     plugin :all_verbs 
     plugin :common_logger, $stderr
 
@@ -32,6 +33,7 @@ module TopPop
           routing.is do
             # GET /search
             routing.get do
+              response.cache_control public: true, max_age: 300
               get_all_video = Service::AllVideos.new.call()
 
               if get_all_video.failure?

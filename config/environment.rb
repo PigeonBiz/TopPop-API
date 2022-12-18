@@ -4,12 +4,29 @@ require 'roda'
 require 'figaro'
 require 'logger'
 require 'rack/session'
+require 'rack/cache'
+require 'redis-rack-cache'
 
 module TopPop
   # Configuration for the App
   class App < Roda
     plugin :environments
 
+     # Setup Cacheing mechanism
+     configure :development do
+      use Rack::Cache,
+          verbose: true,
+          metastore: 'file:_cache/rack/meta',
+          entitystore: 'file:_cache/rack/body'
+    end
+
+    configure :production do
+      use Rack::Cache,
+          verbose: true,
+          metastore: "#{config.REDISCLOUD_URL}/0/metastore",
+          entitystore: "#{config.REDISCLOUD_URL}/0/entitystore"
+    end
+    
     configure do
       # Environment variables setup
       Figaro.application = Figaro::Application.new(
