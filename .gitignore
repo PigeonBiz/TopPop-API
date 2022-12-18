@@ -2,6 +2,6 @@ config/secrets.yml
 coverage/*
 !coverage/.resultset.json
 _snippets/
+*.db
 .bundle/
-_snippets/
-_cache/
+stty.exe.stackdump
