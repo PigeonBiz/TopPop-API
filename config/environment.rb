@@ -5,6 +5,8 @@ require 'figaro'
 require 'sequel'
 require 'logger'
 require 'rack/session'
+require 'rack/cache'
+require 'redis-rack-cache'
 
 module TopPop
   # Configuration for the App
@@ -33,6 +35,21 @@ module TopPop
       # Logger Setup
       LOGGER = Logger.new($stderr)
       def self.logger = LOGGER      
+    end
+
+    # Setup Cacheing mechanism
+    configure :development do
+      use Rack::Cache,
+          verbose: true,
+          metastore: 'file:_cache/rack/meta',
+          entitystore: 'file:_cache/rack/body'
+    end
+
+    configure :production do
+      use Rack::Cache,
+          verbose: true,
+          metastore: "#{config.REDISCLOUD_URL}/0/metastore",
+          entitystore: "#{config.REDISCLOUD_URL}/0/entitystore"
     end
   end
 end
