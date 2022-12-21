@@ -9,9 +9,9 @@ module VcrHelper
   YT_CASSETTE = 'youtube_api'
 
   def self.setup_vcr
-    VCR.configure do |c|
-      c.cassette_library_dir = CASSETTES_FOLDER
-      c.hook_into :webmock
+    VCR.configure do |vcr_config|
+      vcr_config.cassette_library_dir = CASSETTES_FOLDER
+      vcr_config.hook_into :webmock
       vcr_config.ignore_localhost = true # for acceptance tests
       vcr_config.ignore_hosts 'sqs.us-east-1.amazonaws.com'
       vcr_config.ignore_hosts 'sqs.ap-northeast-1.amazonaws.com'
@@ -19,9 +19,9 @@ module VcrHelper
   end
 
   def self.configure_vcr_for_youtube
-    VCR.configure do |c|
-      c.filter_sensitive_data('<YOUTUBE_TOKEN>') { YOUTUBE_TOKEN }
-      c.filter_sensitive_data('<YOUTUBE_TOKEN_ESC>') { CGI.escape(YOUTUBE_TOKEN) }
+    VCR.configure do |config|
+      config.filter_sensitive_data('<YOUTUBE_TOKEN>') { YOUTUBE_TOKEN }
+      config.filter_sensitive_data('<YOUTUBE_TOKEN_ESC>') { CGI.escape(YOUTUBE_TOKEN) }
     end
 
     VCR.insert_cassette(
