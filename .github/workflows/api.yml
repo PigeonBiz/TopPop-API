@@ -21,6 +21,8 @@ jobs:
     strategy:
       # don't cancel other jobs if one fails
       fail-fast: false
+      # maximum number of jobs that can run simultaneously
+      max-parallel: 1
       matrix:
         os: [ubuntu, macos]
     runs-on: ${{ matrix.os }}-latest  # Runs on latest builds of matrix OSes
