@@ -1,0 +1,2 @@
+queues:
+  - https://sqs.us-east-1.amazonaws.com/328395741541/testing_queue

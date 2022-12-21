@@ -70,6 +70,21 @@ module TopPop
             end
           end    
         end
+
+        routing.on 'test' do
+          Messaging::Queue
+          .new(App.config.QUEUE_URL, App.config)
+          .send('TopPop')
+
+          message = "Sent message to queue. Check the worker console."
+
+          result_response = Representer::HttpResponse.new(
+            Response::ApiResult.new(status: :ok, message: message)
+          )
+  
+          response.status = result_response.http_status_code
+          result_response.to_json
+        end
       end
     end
   end
