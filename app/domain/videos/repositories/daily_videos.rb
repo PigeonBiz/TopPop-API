@@ -4,7 +4,7 @@ module TopPop
   module Repository
     # Repository for Video Entities
     class DailyVideos
-      def self.all(player_name)
+      def self.all
         Database::DailyVideoOrm.all.map { |db_video| rebuild_entity(db_video) }
       end
 
