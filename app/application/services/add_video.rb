@@ -11,18 +11,24 @@ module TopPop
 
       private
 
-      FOUND_MSG = 'The video already exist in db'
-      ADDED_MSG = 'Video added to db'
+      FOUND_MSG = ' already existed in the database'
+      ADDED_MSG = ' added to the database'
       BUILD_ERR_MSG = 'Having trouble building video entity'
       ADD_ERR_MSG = 'Having trouble adding video to the database'
 
       def add_video(video_id)
-        if (video_in_database(video_id))
-          Success(Response::ApiResult.new(status: :created, message: FOUND_MSG))
+        if (video = video_in_database(video_id))
+          Success(Response::ApiResult.new(
+            status: :created, 
+            message: "#{video.title} #{FOUND_MSG}"
+          ))
         else
           video_entity = video_from_youtube(video_id)
-          Repository::For.entity(video_entity).create(video_entity)
-          Success(Response::ApiResult.new(status: :created, message: ADDED_MSG))
+          added_video = Repository::For.entity(video_entity).create(video_entity)
+          Success(Response::ApiResult.new(
+            status: :created, 
+            message: "#{added_video.title} #{ADDED_MSG}"
+          ))
         end
       rescue StandardError => e
         puts e

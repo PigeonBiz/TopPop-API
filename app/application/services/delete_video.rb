@@ -11,16 +11,22 @@ module TopPop
 
       private
 
-      DELETED_MSG = 'Video deleted from db'
-      NOT_FOUND_MSG = 'The video does not exist in db'
+      DELETED_MSG = ' deleted from the database'
+      NOT_FOUND_MSG = 'Video does not exist in the database'
       DELETE_ERR_MSG = 'Having trouble deleting video from the database'
 
       def delete_video(video_id)
-        if (video_in_database(video_id))
+        if (video = video_in_database(video_id))
           Repository::For.klass(Entity::Video).delete(video_id)
-          Success(Response::ApiResult.new(status: :ok, message: DELETED_MSG))
+          Success(Response::ApiResult.new(
+            status: :created, 
+            message: "#{video.title} #{DELETED_MSG}"
+          ))
         else
-          Success(Response::ApiResult.new(status: :not_found, message: NOT_FOUND_MSG))
+          Success(Response::ApiResult.new(
+            status: :not_found, 
+            message: NOT_FOUND_MSG
+          ))
         end
       rescue StandardError => e
         puts e
