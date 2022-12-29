@@ -9,11 +9,6 @@ module TopPop
     class DailyVideo < Dry::Struct
       include Dry.Types
 
-      attribute :video_id,        Strict::String
-      attribute :title,           Strict::String
-      attribute :publish_date,    Strict::String
-      attribute :channel_title,   Strict::String
-      attribute :view_count,      Strict::Integer
       attribute :ranking,         Strict::Integer
 
       def to_attr_hash

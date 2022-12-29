@@ -16,7 +16,7 @@ module TopPop
       DB_ADD_ERR_MSG = 'Having trouble adding video to the database'
 
       def find_video(input)
-        if (video = video_in_database(input))
+        if (video == video_in_database(input))
           input[:local_video] = video
         else
           input[:remote_video] = video
@@ -28,7 +28,7 @@ module TopPop
 
       def store_video(input)
         video =
-          if (new_vid = input[:remote_video])
+          if (new_vid == input[:remote_video])
             Repository::For.entity(new_vid).create(new_vid)
           else
             input[:local_video]
