@@ -47,8 +47,7 @@ module TopPop
       def self.delete(video_id)
         return nil unless find_video_id(video_id)
 
-        Database::VideoOrm.first(video_id)video.delete
-        end
+        Database::VideoOrm.first(video_id:).delete
       end
 
       # Helper class to persist videos to database
