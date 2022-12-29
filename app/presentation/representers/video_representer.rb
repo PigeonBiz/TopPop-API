@@ -17,8 +17,12 @@ module TopPop
       property :channel_title
       property :view_count
 
-      link :self do
-        "#{App.config.API_HOST}/api/v1/videos/#{video_id}"
+      link :add do
+        "#{App.config.API_HOST}/api/v1/add/#{video_id}"
+      end
+
+      link :delete do
+        "#{App.config.API_HOST}/api/v1/delete/#{video_id}"
       end
 
       private

@@ -71,6 +71,29 @@ module TopPop
           end    
         end
 
+        routing.on 'add' do
+          routing.on String do |video_id|
+            # GET /add/video_id
+            routing.get do
+              add_result = Service::AddVideo.new.call(video_id)
+
+              if add_result.failure?
+                failed = Representer::HttpResponse.new(add_result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              message = "Video added to db."
+
+              result_response = Representer::HttpResponse.new(
+                Response::ApiResult.new(status: :ok, message: message)
+              )
+      
+              response.status = result_response.http_status_code
+              result_response.to_json
+            end
+          end    
+        end
+
         routing.on 'test' do
           Messaging::Queue
           .new(App.config.QUEUE_URL, App.config)
