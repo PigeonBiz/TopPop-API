@@ -18,10 +18,9 @@ module TopPop
       def get_all_videos()
         result_videos = Repository::Videos.all
         Success(result_videos)
-      rescue StandardError
-        Failure(
-          Response::ApiResult.new(status: :internal_error, message: GET_ERR_MSG)
-        )
+      rescue StandardError => e 
+        puts e.backtrace.join("\n")
+        Failure(Response::ApiResult.new(status: :internal_error, message: GET_ERR_MSG))
       end
 
       def create_video_list(video_entities)

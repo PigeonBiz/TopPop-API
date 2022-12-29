@@ -21,10 +21,9 @@ module TopPop
                           .search(search_keyword, 10)
                           .videos  
         Success(result_videos)
-      rescue StandardError
-        Failure(
-          Response::ApiResult.new(status: :internal_error, message: GET_ERR_MSG)
-        )
+      rescue StandardError => e
+        puts e.backtrace.join("\n")
+        Failure(Response::ApiResult.new(status: :internal_error, message: GET_ERR_MSG))
       end
 
       def create_video_list(video_entities)

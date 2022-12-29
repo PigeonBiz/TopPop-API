@@ -54,7 +54,7 @@ module TopPop
         end
 
         def videos
-          VideoMapper.new(@yt_token, @data['items']).build2vid
+          VideoMapper.new(@yt_token, @data['items']).build_vid_list
         end
       end
     end
