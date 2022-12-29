@@ -82,14 +82,27 @@ module TopPop
                 routing.halt failed.http_status_code, failed.to_json
               end
 
-              message = "Video added to db."
+              http_response = Representer::HttpResponse.new(add_result.value!)
+              response.status = http_response.http_status_code
+              http_response.to_json
+            end
+          end    
+        end
 
-              result_response = Representer::HttpResponse.new(
-                Response::ApiResult.new(status: :ok, message: message)
-              )
-      
-              response.status = result_response.http_status_code
-              result_response.to_json
+        routing.on 'delete' do
+          routing.on String do |video_id|
+            # GET /delete/video_id
+            routing.get do
+              delete_result = Service::DeleteVideo.new.call(video_id)
+
+              if delete_result.failure?
+                failed = Representer::HttpResponse.new(delete_result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(delete_result.value!)
+              response.status = http_response.http_status_code
+              http_response.to_json
             end
           end    
         end
