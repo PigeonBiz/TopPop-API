@@ -31,7 +31,8 @@ module TopPop
             title:,
             publish_date:,
             channel_title:,
-            view_count:
+            view_count:,
+            thumbnail_url:
           )
         end
 
@@ -58,6 +59,10 @@ module TopPop
         end
       end
 
+      def thumbnail_url
+        @video_entity.thumbnail_url
+      end
+      
       def self.find(entity)
         find_video_id(entity.video_id)
       end

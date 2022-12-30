@@ -40,7 +40,8 @@ module TopPop
           title: db_record.title,
           publish_date: db_record.publish_date,
           channel_title: db_record.channel_title,
-          view_count: db_record.view_count
+          view_count: db_record.view_count,
+          thumbnail_url: db_record.thumbnail_url
         )
       end
 

@@ -16,6 +16,7 @@ module TopPop
       property :publish_date
       property :channel_title
       property :view_count
+      property :thumbnail_url
 
       link :add do
         "#{App.config.API_HOST}/api/v1/add/#{video_id}"
