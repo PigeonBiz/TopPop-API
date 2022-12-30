@@ -71,6 +71,42 @@ module TopPop
           end    
         end
 
+        routing.on 'add' do
+          routing.on String do |video_id|
+            # GET /add/video_id
+            routing.get do
+              add_result = Service::AddVideo.new.call(video_id)
+
+              if add_result.failure?
+                failed = Representer::HttpResponse.new(add_result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(add_result.value!)
+              response.status = http_response.http_status_code
+              http_response.to_json
+            end
+          end    
+        end
+
+        routing.on 'delete' do
+          routing.on String do |video_id|
+            # GET /delete/video_id
+            routing.get do
+              delete_result = Service::DeleteVideo.new.call(video_id)
+
+              if delete_result.failure?
+                failed = Representer::HttpResponse.new(delete_result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(delete_result.value!)
+              response.status = http_response.http_status_code
+              http_response.to_json
+            end
+          end    
+        end
+
         routing.on 'test' do
           Messaging::Queue
           .new(App.config.QUEUE_URL, App.config)

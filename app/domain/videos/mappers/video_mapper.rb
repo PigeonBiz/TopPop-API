@@ -3,7 +3,6 @@
 module TopPop
   # Provides access to video data
   module Youtube
-    # Data Mapper: Youtube search -> Video entity
     class VideoMapper
       def initialize(yt_token, videos_data, gateway_class = Youtube::Api)
         @yt_token = yt_token
@@ -12,11 +11,18 @@ module TopPop
         @gateway = @gateway_class.new(@yt_token)
       end
 
-      def build2vid
+      # build list of video entities from search result
+      def build_vid_list
         @videos_data.map do |video_data|
           video_information = @gateway.video_data(video_data['id']['videoId'])
           VideoMapper.build_entity(video_information['items'][0])
         end
+      end
+
+      # build a single video entity from video id (as @videos_data)
+      def build_vid
+        video_information = @gateway.video_data(@videos_data)
+        VideoMapper.build_entity(video_information['items'][0])
       end
 
       def self.build_entity(video_data)

@@ -12,7 +12,6 @@ module TopPop
         Database::DailyVideoOrm.all.map { |db_video| rebuild_entity(db_video) }
       end
 
-
       def self.find(entity)
         find_video_id(entity.video_id)
       end
@@ -41,10 +40,14 @@ module TopPop
           title: db_record.title,
           publish_date: db_record.publish_date,
           channel_title: db_record.channel_title,
-          view_count: db_record.view_count,
-          like_count: db_record.like_count,
-          comment_count: db_record.comment_count
+          view_count: db_record.view_count
         )
+      end
+
+      def self.delete(video_id)
+        return nil unless find_video_id(video_id)
+
+        Database::VideoOrm.first(video_id:).delete
       end
 
       # Helper class to persist videos to database
