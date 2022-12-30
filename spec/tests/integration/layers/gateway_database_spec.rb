@@ -31,6 +31,7 @@ describe 'Integration Tests of Youtube API and Database' do
       _(rebuilt.first.title).must_equal(videos.title)
       _(rebuilt.first.publish_date).must_equal(videos.publish_date)
       _(rebuilt.first.view_count).must_equal(videos.view_count)
+      _(rebuilt.first.thumbnail_url).must_equal(videos.thumbnail_url)
     end
   end
 end

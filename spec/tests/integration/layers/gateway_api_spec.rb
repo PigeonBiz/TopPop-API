@@ -67,6 +67,9 @@ describe 'Tests Youtube API library' do # rubocop:disable Metrics/BlockLength
 
         videos_view_count = videos.map(&:view_count)
         _(videos_view_count).wont_be_nil
+
+        videos_thumbnail_url = videos.map(&:thumbnail_url)
+        _(videos_thumbnail_url).wont_be_nil
       end
     end
   end

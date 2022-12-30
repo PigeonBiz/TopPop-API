@@ -14,6 +14,7 @@ module TopPop
       attribute :publish_date,    Strict::String
       attribute :channel_title,   Strict::String
       attribute :view_count,      Strict::Integer
+      attribute :thumbnail_url,   Strict::String
 
       def to_attr_hash
         to_hash

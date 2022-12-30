@@ -41,7 +41,8 @@ module TopPop
             title:,
             publish_date:,
             channel_title:,
-            view_count:
+            view_count:,
+            thumbnail_url:
           )
         end
 
@@ -65,6 +66,10 @@ module TopPop
 
         def view_count
           @video_data['statistics']['viewCount'].to_i
+        end
+
+        def thumbnail_url
+          @video_data['snippet']['thumbnails']['medium']['url']
         end
       end
     end
