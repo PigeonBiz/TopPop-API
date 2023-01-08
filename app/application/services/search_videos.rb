@@ -16,11 +16,11 @@ module TopPop
       PARSE_ERR_MSG = 'Having trouble creating video list'
 
       def get_youtube_videos(search_keyword)
-        result_videos = Youtube::SearchMapper
+        video_entities = Youtube::SearchMapper
                           .new(App.config.ACCESS_TOKEN)
                           .search(search_keyword, 10)
                           .videos  
-        Success(result_videos)
+        Success(video_entities)
       rescue StandardError => e
         puts e.backtrace.join("\n")
         Failure(Response::ApiResult.new(status: :internal_error, message: GET_ERR_MSG))
