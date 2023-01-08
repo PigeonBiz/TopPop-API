@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "date"
+
 module TopPop
   # Provides access to video data
   module Youtube
@@ -56,7 +58,8 @@ module TopPop
         end
 
         def publish_date
-          @video_data['snippet']['publishedAt']
+          raw_date = @video_data['snippet']['publishedAt']
+          Date.parse(raw_date).strftime("%m/%d/%Y")
         end
 
         def channel_title
