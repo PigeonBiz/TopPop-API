@@ -70,28 +70,7 @@ module TopPop
             end
           end    
         end
-
-        routing.on 'daily' do
-          routing.is do
-            # GET /search
-            routing.get do
-              response.cache_control public: true, max_age: 300
-              
-              get_all_daily_video = Service::AllDailyVideos.new.call()
-
-              if get_all_daily_video.failure?
-                failed = Representer::HttpResponse.new(get_all_daily_video.failure)
-                routing.halt failed.http_status_code, failed.to_json
-              end
-
-              http_response = Representer::HttpResponse.new(get_all_daily_video.value!)
-              response.status = http_response.http_status_code
-
-              Representer::Videos.new(
-                get_all_daily_video.value!.message
-              ).to_json              
-            end
-          end   
+  
         routing.on 'add' do
           routing.on String do |video_id|
             # GET /add/video_id
