@@ -1,15 +1,13 @@
 # frozen_string_literal: true
 
 require_relative 'videos'
-require_relative 'daily_videos'
 
 module TopPop
   module Repository
     # Finds the right repository for an entity object or class
     module For
       ENTITY_REPOSITORY = {
-        Entity::Video => Videos,
-        Entity::DailyVideo => DailyVideos
+        Entity::Video => Videos
       }.freeze
 
       def self.klass(entity_klass)
