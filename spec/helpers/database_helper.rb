@@ -6,7 +6,6 @@ module DatabaseHelper
     # Ignore foreign key constraints when wiping tables
     TopPop::App.DB.run('PRAGMA foreign_keys = OFF')
     TopPop::Database::VideoOrm.map(&:destroy)
-    TopPop::Database::ScoreOrm.map(&:destroy)
     TopPop::App.DB.run('PRAGMA foreign_keys = ON')
   end
 end
