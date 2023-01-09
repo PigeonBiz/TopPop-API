@@ -4,7 +4,7 @@ require 'dry/transaction'
 
 module TopPop
   module Service
-    # Start to play game
+    # verify player name
     class VerifyPlayer
       include Dry::Transaction
 
@@ -16,7 +16,7 @@ module TopPop
         if player_name.success?
           Success(player_name)
         else
-          Failure("#{player_name.errors.messages.first}")
+          Failure(player_name.errors.messages.first.to_s)
         end
       end
     end

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require "date"
+require 'date'
 
 module TopPop
-  # Provides access to video data
   module Youtube
+    # Provides access to video data
     class VideoMapper
       def initialize(yt_token, videos_data, gateway_class = Youtube::Api)
         @yt_token = yt_token
@@ -59,7 +59,7 @@ module TopPop
 
         def publish_date
           raw_date = @video_data['snippet']['publishedAt']
-          Date.parse(raw_date).strftime("%m/%d/%Y")
+          Date.parse(raw_date).strftime('%m/%d/%Y')
         end
 
         def channel_title

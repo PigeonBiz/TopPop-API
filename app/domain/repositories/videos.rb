@@ -8,7 +8,7 @@ module TopPop
         Database::VideoOrm.all.map { |db_video| rebuild_entity(db_video) }
       end
 
-      def self.daily_video_all(player_name)
+      def self.daily_video_all(_player_name)
         Database::DailyVideoOrm.all.map { |db_video| rebuild_entity(db_video) }
       end
 

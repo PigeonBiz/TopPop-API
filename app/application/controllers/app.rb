@@ -8,10 +8,10 @@ module TopPop
   class App < Roda
     plugin :halt
     plugin :caching
-    plugin :all_verbs 
+    plugin :all_verbs
     plugin :common_logger, $stderr
 
-    use Rack::MethodOverride 
+    use Rack::MethodOverride
 
     route do |routing|
       response['Content-Type'] = 'application/json'
@@ -21,7 +21,7 @@ module TopPop
         message = "TopPop API v1 at /api/v1/ in #{App.environment} mode"
 
         result_response = Representer::HttpResponse.new(
-          Response::ApiResult.new(status: :ok, message: message)
+          Response::ApiResult.new(status: :ok, message:)
         )
 
         response.status = result_response.http_status_code
@@ -34,8 +34,7 @@ module TopPop
             # GET /search
             routing.get do
               response.cache_control public: true, max_age: 300
-              
-              get_all_video = Service::AllVideos.new.call()
+              get_all_video = Service::AllVideos.new.call
 
               if get_all_video.failure?
                 failed = Representer::HttpResponse.new(get_all_video.failure)
@@ -47,7 +46,7 @@ module TopPop
 
               Representer::Videos.new(
                 get_all_video.value!.message
-              ).to_json              
+              ).to_json
             end
           end
 
@@ -68,9 +67,9 @@ module TopPop
                 search_result.value!.message
               ).to_json
             end
-          end    
+          end
         end
-  
+
         routing.on 'add' do
           routing.on String do |video_id|
             # GET /add/video_id
@@ -86,7 +85,7 @@ module TopPop
               response.status = http_response.http_status_code
               http_response.to_json
             end
-          end    
+          end
         end
 
         routing.on 'delete' do
@@ -104,20 +103,20 @@ module TopPop
               response.status = http_response.http_status_code
               http_response.to_json
             end
-          end    
+          end
         end
 
         routing.on 'test' do
           Messaging::Queue
-          .new(App.config.QUEUE_URL, App.config)
-          .send('TopPop')
+            .new(App.config.QUEUE_URL, App.config)
+            .send('TopPop')
 
-          message = "Sent message to queue. Check the worker console."
+          message = 'Sent message to queue. Check the worker console.'
 
           result_response = Representer::HttpResponse.new(
-            Response::ApiResult.new(status: :ok, message: message)
+            Response::ApiResult.new(status: :ok, message:)
           )
-  
+
           response.status = result_response.http_status_code
           result_response.to_json
         end
