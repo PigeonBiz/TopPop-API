@@ -4,6 +4,7 @@ require 'dry/transaction'
 
 module TopPop
   module Service
+    # get all videos from db
     class AllVideos
       include Dry::Transaction
 
@@ -15,10 +16,10 @@ module TopPop
       GET_ERR_MSG = 'Having trouble getting all db videos'
       PARSE_ERR_MSG = 'Having trouble creating video list'
 
-      def get_all_videos()
+      def get_all_videos
         result_videos = Repository::Videos.all
         Success(result_videos)
-      rescue StandardError => e 
+      rescue StandardError => e
         puts e.backtrace.join("\n")
         Failure(Response::ApiResult.new(status: :internal_error, message: GET_ERR_MSG))
       end

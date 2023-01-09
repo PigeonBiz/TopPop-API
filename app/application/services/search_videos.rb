@@ -4,6 +4,7 @@ require 'dry/transaction'
 
 module TopPop
   module Service
+    # search videos in yt by keyword
     class SearchVideos
       include Dry::Transaction
 
@@ -17,9 +18,9 @@ module TopPop
 
       def get_youtube_videos(search_keyword)
         video_entities = Youtube::SearchMapper
-                          .new(App.config.ACCESS_TOKEN)
-                          .search(search_keyword, 10)
-                          .videos  
+                         .new(App.config.ACCESS_TOKEN)
+                         .search(search_keyword, 10)
+                         .videos
         Success(video_entities)
       rescue StandardError => e
         puts e.backtrace.join("\n")

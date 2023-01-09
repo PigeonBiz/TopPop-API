@@ -4,6 +4,7 @@ require 'dry/transaction'
 
 module TopPop
   module Service
+    # delete videos in db by id
     class DeleteVideo
       include Dry::Transaction
 
@@ -19,14 +20,14 @@ module TopPop
         if (video = video_in_database(video_id))
           Repository::For.klass(Entity::Video).delete(video_id)
           Success(Response::ApiResult.new(
-            status: :created, 
-            message: "#{video.title} #{DELETED_MSG}"
-          ))
+                    status: :created,
+                    message: "#{video.title} #{DELETED_MSG}"
+                  ))
         else
           Success(Response::ApiResult.new(
-            status: :not_found, 
-            message: NOT_FOUND_MSG
-          ))
+                    status: :not_found,
+                    message: NOT_FOUND_MSG
+                  ))
         end
       rescue StandardError => e
         puts e

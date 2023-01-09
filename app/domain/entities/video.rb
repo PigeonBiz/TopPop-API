@@ -4,8 +4,8 @@ require 'dry-types'
 require 'dry-struct'
 
 module TopPop
-  # Provides access to video data
   module Entity
+    # Provides access to video data
     class Video < Dry::Struct
       include Dry.Types
 
@@ -20,7 +20,7 @@ module TopPop
       end
 
       def get_video_id
-        "#{video_id}"
+        video_id.to_s
       end
     end
   end

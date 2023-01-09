@@ -4,6 +4,7 @@ require_relative 'video_mapper'
 
 module TopPop
   module Youtube
+    # Provides access to search data
     class SearchMapper
       def initialize(yt_token, gateway_class = Youtube::Api)
         @yt_token = yt_token

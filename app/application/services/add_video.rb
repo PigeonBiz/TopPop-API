@@ -4,6 +4,7 @@ require 'dry/transaction'
 
 module TopPop
   module Service
+    # add videos in db by id
     class AddVideo
       include Dry::Transaction
 
@@ -19,16 +20,16 @@ module TopPop
       def add_video(video_id)
         if (video = video_in_database(video_id))
           Success(Response::ApiResult.new(
-            status: :created, 
-            message: "#{video.title} #{FOUND_MSG}"
-          ))
+                    status: :created,
+                    message: "#{video.title} #{FOUND_MSG}"
+                  ))
         else
           video_entity = video_from_youtube(video_id)
           added_video = Repository::For.entity(video_entity).create(video_entity)
           Success(Response::ApiResult.new(
-            status: :created, 
-            message: "#{added_video.title} #{ADDED_MSG}"
-          ))
+                    status: :created,
+                    message: "#{added_video.title} #{ADDED_MSG}"
+                  ))
         end
       rescue StandardError => e
         puts e
