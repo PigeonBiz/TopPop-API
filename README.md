@@ -49,7 +49,7 @@ RACK_ENV=development rake db:migrate
 RACK_ENV=development rake run:dev
 ```
 
-You should see the api app live in port 9009 `http://localhost:9009`.
+You should see the api app live on port 9009 `http://localhost:9009`.
 
 You can call the API like below.
 
