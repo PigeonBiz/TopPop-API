@@ -4,7 +4,7 @@
 
 TopPop is a music video sorting game. To win this game, you have to accurately sort a number of *top pop*ular music videos in order of their popularity.
 
-TopPop source code contains [the web application repo](https://github.com/PigeonBiz/TopPop-APP) and the web api repo (this repo). Built with Roda, SQLite, PostgreSQL, Redis, AWS Simple Queue Service.
+TopPop source code contains [the web application repo](https://github.com/PigeonBiz/TopPop-APP) and the web api repo (this repo). Built with Roda, PostgreSQL, Redis, AWS Simple Queue Service.
 
 The web API application is live here: [https://toppop-api.herokuapp.com](https://toppop-api.herokuapp.com).
 
@@ -29,9 +29,9 @@ bundle install
 
 ### 2. Input variables in `config/secrets.yml`
 
-Clone `secrets_example.yml`, insert all variables, rename `secrets.yml`.
+Clone `secrets_example.yml`, input all variables, rename `secrets.yml`.
 
-The variables required:
+Required variables:
 
  - ACCESS_TOKEN: Youtube API v3 access token
  - REDISCLOUD_URL: url assigned by Redis provider on Heroku
@@ -46,10 +46,12 @@ The variables required:
 Run:
 ```bash
 RACK_ENV=development rake db:migrate
-RACK_ENV=development rake run
+RACK_ENV=development rake run:dev
 ```
 
 You should see the api app live in port 9009 `http://localhost:9009`.
+
+You can call the API like below.
 
 
 
