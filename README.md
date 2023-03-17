@@ -6,9 +6,9 @@ TopPop is a music video sorting game. To win this game, you have to accurately s
 
 TopPop source code contains [the web application repo](https://github.com/PigeonBiz/TopPop-APP) and the web api repo (this repo). Built with Roda, PostgreSQL, Redis, AWS Simple Queue Service.
 
-The web API application is live here: [https://toppop-api.herokuapp.com](https://toppop-api.herokuapp.com).
+<!-- The web API application is live here: [https://toppop-api.herokuapp.com](https://toppop-api.herokuapp.com).
 
-The web application is live here: [https://toppop.herokuapp.com](https://toppop.herokuapp.com).
+The web application is live here: [https://toppop.herokuapp.com](https://toppop.herokuapp.com). -->
 
 
 ## Instructions 
